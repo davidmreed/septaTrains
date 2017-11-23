@@ -1,7 +1,7 @@
 ({
     doInit : function(component, event, helper) {
         component.set('v.columns', [
-            { label: 'Station', fieldName: 'station', type: 'string'},
+            { label: 'Station', fieldName: 'DisplayName', type: 'string'},
             { label: 'Est. Time', fieldName: 'est_tm', type: 'string'}
         ]);
     },

@@ -8,8 +8,13 @@
             action.setParam('train', component.get('v.selectedEntity'));
             action.setCallback(this, function(result) {
                 var j = JSON.parse(result.getReturnValue());
-                
-                component.set('v.timetable', j.filter(function(t) { return t['act_tm'] === 'na' }));
+                var entries = j.filter(function(t) { return t['act_tm'] === 'na' });
+
+                for (var e of entries) {
+                    e['DisplayName'] = septaStationMapper.convert_api(e['station']);
+                }
+
+                component.set('v.timetable', entries);
             });
             
             $A.enqueueAction(action);

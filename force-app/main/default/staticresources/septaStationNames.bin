@@ -1,5 +1,5 @@
-{
-    "display_to_api": {
+window.septaStationMapper = (function() {
+    var display_to_api = {
         "9th Street Station": "9th St",
         "49th Street": "49th St",
         "Airport Terminals C & D": "Airport Terminal C-D",
@@ -20,8 +20,8 @@
         "Temple University": "Temple U",
         "Trenton Transit Center": "Trenton",
         "Wayne Junction": "Wayne Jct"
-    },
-    "api_to_display": {
+    };
+    var api_to_display = {
         "9th St": "9th Street Station",
         "49th St": "49th Street",
         "Airport Terminal C-D": "Airport Terminals C & D",
@@ -42,5 +42,14 @@
         "Temple U": "Temple University",
         "Trenton": "Trenton Transit Center",
         "Wayne Jct": "Wayne Junction"
+    };
+
+    return {
+        convert_api : function(api) {
+            return api_to_display[api] || api;
+        },
+        convert_display : function(display) {
+            return display_to_api[display] || display;
+        }
     }
-}
+})();

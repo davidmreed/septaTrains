@@ -12,7 +12,7 @@
         m.on('click', function(e) {
             var evt = component.getEvent('mapSelection');
             
-            evt.setParam('entity', { entity: data['location_name'], type: 'STATION' });
+            evt.setParam('entity', { entity: septaStationMapper.convert_display(data['location_name']), type: 'STATION' });
             evt.setParam('type', 'STATION');
             
             evt.fire();
@@ -28,10 +28,10 @@
                 '<strong>Train #' + data['trainno'] + '</strong>' +
                        '<br /><span style="text-transform: capitalize;">' + data['service'].toLowerCase() + '</span> ' +
                        data['consist'].split(',').length + '-car train' +
-                       ' from <strong>' + data['SOURCE'] + 
-                       '</strong> to <strong>' + data['dest'] + '</strong>, ' +
+                       ' from <strong>' + septaStationMapper.convert_api(data['SOURCE']) + 
+                       '</strong> to <strong>' + septaStationMapper.convert_api(data['dest']) + '</strong>, ' +
                 'running on the <strong>' + data['line'] + '</strong> line' +
-                '<br />' + 'Next stop <strong>' + data['nextstop'] + '</strong>' +
+                '<br />' + 'Next stop <strong>' + septaStationMapper.convert_api(data['nextstop']) + '</strong>' +
                        '<br />' + (data['late'] != 0 ? ('<span style="color: red;">' + data['late'] + ' minute' + (data['late'] == 1 ? '' : 's') + ' late</span>') : 'On time') +
                        '</p>'
         ).addTo(map);

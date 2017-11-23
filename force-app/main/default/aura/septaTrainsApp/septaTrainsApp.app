@@ -3,7 +3,7 @@
     
     <aura:handler name="navigateEvent" event="c:navigateEvent" action="{! c.onSidebarNavigate }" />
     <aura:handler name="mapSelection" event="c:navigateEvent" action="{! c.onMapSelect }" />
-    
+        
     <lightning:layout horizontalAlign="spread" class="slds-grid slds-grid--frame">
         <lightning:layoutItem size="8" flexibility="grow">
         	<c:septaTrains aura:id="mapView" />

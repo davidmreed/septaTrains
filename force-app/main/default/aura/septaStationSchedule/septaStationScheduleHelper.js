@@ -16,6 +16,9 @@
                         alert(j.error);
                     }
                 } else {
+                    for (var e of j.timetable) {
+                        e['DisplayName'] = septaStationMapper.convert_api(e.destination);
+                    }
                     component.set('v.timetable', j.timetable);
                 }            
             });
