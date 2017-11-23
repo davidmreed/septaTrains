@@ -1,0 +1,20 @@
+<aura:component extensible="true" abstract="true">
+    <aura:attribute name="selectedEntity" type="String" access="PUBLIC" />
+    <aura:attribute name="displayName" type="String" access="PUBLIC" />
+    <aura:attribute name="timetable" type="Object[]" access="PUBLIC" />
+    <aura:attribute name="columns" type="List" access="PUBLIC" />
+    
+    <lightning:card >
+        <aura:set attribute="title">
+            <div class="slds-page-header__title">Schedule for {! v.displayName }</div>
+        </aura:set>
+        <div class="slds-scrollable_y" style="height: 100vh;">
+            <lightning:datatable data="{! v.timetable }"
+                                 columns="{! v.columns }"
+                                 aura:id="table"
+                                 hideCheckboxColumn="true"
+                                 resizeColumnDisabled="true">
+            </lightning:datatable>
+        </div>
+    </lightning:card>
+</aura:component>

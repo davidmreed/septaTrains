@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="selectedEntity" type="Object" access="PUBLIC" />
+    <aura:attribute name="selectedTrain" type="String" access="PUBLIC" />
+    <aura:attribute name="selectedStation" type="String" access="PUBLIC" />
+
+    <aura:handler name="change" value="{! v.selectedEntity }" action="{! c.handleChange }" />
+    
+    <aura:if isTrue="{! v.selectedEntity.type == 'TRAIN' }">
+        <c:septaTrainSchedule selectedEntity="{! v.selectedTrain }" />
+        <aura:set attribute="else">
+            <aura:if isTrue="{! v.selectedEntity.type == 'STATION' }">
+            	<c:septaStationSchedule selectedEntity="{! v.selectedStation }" />
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

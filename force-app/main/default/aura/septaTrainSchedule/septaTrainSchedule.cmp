@@ -1,0 +1,6 @@
+<aura:component controller="septaTrainScheduleServerController" extends="c:septaSchedule">
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+    <aura:handler name="change" value="{! v.selectedEntity }" action="{! c.handleSelection }" />
+
+    <aura:set attribute="displayName" value="{! 'Train #' + v.selectedEntity }" />
+</aura:component>

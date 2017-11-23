@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="An entity was selected by the user">
+    <aura:attribute name="entity" type="Object" access="PUBLIC" />
+</aura:event>

@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable" controller="septaTrainsServerController">
+    <aura:attribute name="map" type="Object" access="PRIVATE" />
+    <aura:attribute name="popupStore" type="Object" access="PRIVATE" />
+    
+    <aura:registerEvent name="mapSelection" type="c:navigateEvent" />
+               
+    <ltng:require styles="{!$Resource.Leaflet + '/leaflet.css'}" 
+                  scripts="{!$Resource.Leaflet + '/leaflet-src.js'}"
+                  afterScriptsLoaded="{! c.onScriptsLoaded }" /> 
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+    
+    <aura:method name="selectEntity" action="{! c.doSelectEntity }">
+        <aura:attribute name="entity" type="String" />
+    </aura:method>
+
+    <div aura:id="map" class="slds-size--12-of-12 grow slds-grid--vertical-stretch"></div>
+</aura:component>

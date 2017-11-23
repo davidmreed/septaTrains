@@ -1,0 +1,15 @@
+.THIS {
+    height:100%;
+}
+
+.THIS strong {
+    font-weight: bold;
+}
+
+.THIS .service {
+    text-transform:capitalize;
+}
+
+.THIS .late {
+    color: red;
+}
