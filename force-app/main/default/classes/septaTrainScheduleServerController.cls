@@ -21,7 +21,6 @@ public class septaTrainScheduleServerController {
         HttpResponse res = http.send(req);
         
         if (res.getStatusCode() == 200) {
-            System.debug('returning ' + res.getBody());
             return res.getBody();
         }
         
@@ -46,8 +45,10 @@ public class septaTrainScheduleServerController {
         if (res.getStatusCode() == 200) {
             // JSON returned can have several different structures.
             // It can be { error: errortext }
-            // It can be { "Date time header": { [ {"Northbound": [list of departures]}, {"Southbound": [list of departures]} ] }
-            // Or it can be above but with a blank list in place of the departures list.
+            // It can be { "Date time header": [ {"Northbound": [list of departures]}, {"Southbound": [list of departures]} ] }
+            // It can be { "Date time header": [ [], {"Southbound": [list of departures]} ] }, 
+            //  when there are no Northbound (or southbound) departures
+            // Or it can be { "Date time header": [ [], [] ] } when there are no departures at all.
             if (res.getBody().length() > 0) {
 	            Map<String, Object> o;
 
@@ -67,30 +68,33 @@ public class septaTrainScheduleServerController {
                 	r.timetable = new List<septaStationTimetableEntry>();
                     // The value for this top-level key is a list of dictionaries.
                     // Each dictionary contains a single key, either "Northbound" or "Southbound", 
-                    // each with a value of a list of departures (which may be empty)
+                    // each with a value of a list of departures.
+                    // If there aren't any departures, the dictionary is replaced by an empty list.
                     for (Object q : topLevel) {
-                        Map<String, Object> m = (Map<String, Object>)q;
+                        if (!(q instanceof List<Object>)) {
+                            Map<String, Object> m = (Map<String, Object>)q;
 
-                        if (m.containsKey('Northbound') || m.containsKey('Southbound')) {
-                            String soleKey = new List<String>(m.keySet()).get(0);
-                            List<Object> listOfDepartures = (List<Object>)m.get(soleKey);
+                            if (m.containsKey('Northbound') || m.containsKey('Southbound')) {
+                                String soleKey = new List<String>(m.keySet()).get(0);
+                                List<Object> listOfDepartures = (List<Object>)m.get(soleKey);
 
-                            if (listOfDepartures != null && listOfDepartures.size() > 0) {
-                                for (Object k : listOfDepartures) {
-                                    Map<String, Object> departure = (Map<String, Object>)k;
+                                if (listOfDepartures != null && listOfDepartures.size() > 0) {
+                                    for (Object k : listOfDepartures) {
+                                        Map<String, Object> departure = (Map<String, Object>)k;
 
-                                    // Add a departure item for each entry
-                                    septaStationTimetableEntry s = new septaStationTimetableEntry();
-                                    
-                                    s.trainNumber = (String)departure.get('train_id');
-                                    s.destination = (String)departure.get('destination');
-                                    
-                                    // Separately coerce the date time value to a string 
-                                    // so Apex can bind to the right DateTime.valueOf
-                                    String dateTimeString = (String)departure.get('depart_time');
-                                    s.departureTime = DateTime.valueOf(dateTimeString).format('h:mm a');
-                                    
-                                    r.timetable.add(s);
+                                        // Add a departure item for each entry
+                                        septaStationTimetableEntry s = new septaStationTimetableEntry();
+                                        
+                                        s.trainNumber = (String)departure.get('train_id');
+                                        s.destination = (String)departure.get('destination');
+                                        
+                                        // Separately coerce the date time value to a string 
+                                        // so Apex can bind to the right DateTime.valueOf
+                                        String dateTimeString = (String)departure.get('depart_time');
+                                        s.departureTime = DateTime.valueOf(dateTimeString).format('h:mm a');
+                                        
+                                        r.timetable.add(s);
+                                    }
                                 }
                             }
                         }
