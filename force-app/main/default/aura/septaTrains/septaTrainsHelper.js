@@ -6,19 +6,19 @@
 	},
     
     createStationMapMarker: function(component, data, map) {
-        var m = L.marker([data['location_lat'], data['location_lon']],
-                         {'title': data['location_name'],
+        var m = L.marker([data['lat'], data['long']],
+                         {'title': data['name'] + ' (' + data['line'] + ')',
                           'icon': L.divIcon()}).addTo(map);
         m.on('click', function(e) {
             var evt = component.getEvent('mapSelection');
             
-            evt.setParam('entity', { entity: septaStationMapper.convert_display(data['location_name']), type: 'STATION' });
+            evt.setParam('entity', { entity: data['name'], type: 'STATION', data: data });
             evt.setParam('type', 'STATION');
             
             evt.fire();
         });
         
-        component.get('v.popupStore')[data['location_name']] = m;
+        component.get('v.popupStore')[data['name']] = m;
     },
     
     createTrainMapMarker: function(component, data, map) {
@@ -39,7 +39,7 @@
         m.on('popupopen', function(e) {
             var evt = component.getEvent('mapSelection');
             
-            evt.setParam('entity', { entity: data['trainno'], type: 'TRAIN' });
+            evt.setParam('entity', { entity: data['trainno'], type: 'TRAIN', data: data });
             
             evt.fire();
         });
@@ -55,19 +55,13 @@
             for (var t of j) {
     			helper.createTrainMapMarker(component, t, map);
 			}
-                        
-            var a = component.get('c.getStationLocations');
-        	a.setCallback(this, function(result) {
-                var j = JSON.parse(result.getReturnValue());
-
-                for (var t of j) {
-                    helper.createStationMapMarker(component, t, map);
-                }
-            });
-            
-        	$A.enqueueAction(a);
-		});
+        });
         
         $A.enqueueAction(e);
+
+        for (var t of septaStationLocations) {
+            helper.createStationMapMarker(component, t, map);
+        }
+
     }
 })

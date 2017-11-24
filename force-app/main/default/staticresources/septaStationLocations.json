@@ -1,0 +1,1087 @@
+window.septaStationLocations = [
+    {
+        "id": "90001",
+        "name": "Cynwyd",
+        "line": "Cynwyd Line",
+        "lat": "40.0066667",
+        "long": "-75.2316667"
+    },
+    {
+        "id": "90002",
+        "name": "Bala",
+        "line": "Cynwyd Line",
+        "lat": "40.0011111",
+        "long": "-75.2277778"
+    },
+    {
+        "id": "90003",
+        "name": "Wynnefield Avenue",
+        "line": "Cynwyd Line",
+        "lat": "39.99",
+        "long": "-75.2255556"
+    },
+    {
+        "id": "90004",
+        "name": "30th Street Station",
+        "line": "All Regional Rail Lines",
+        "lat": "39.9566667",
+        "long": "-75.1816667"
+    },
+    {
+        "id": "90005",
+        "name": "Suburban Station",
+        "line": "All Regional Rail Lines",
+        "lat": "39.9538889",
+        "long": "-75.1677778"
+    },
+    {
+        "id": "90006",
+        "name": "Jefferson Station (Market East)",
+        "line": "All Regional Rail Lines",
+        "lat": "39.9525",
+        "long": "-75.1580556"
+    },
+    {
+        "id": "90007",
+        "name": "Temple University",
+        "line": "All Regional Rail Lines",
+        "lat": "39.9813889",
+        "long": "-75.1494444"
+    },
+    {
+        "id": "90008",
+        "name": "North Broad",
+        "line": "Multiple Lines",
+        "lat": "39.9922222",
+        "long": "-75.1538889"
+    },
+    {
+        "id": "90009",
+        "name": "Wayne Junction",
+        "line": "Multiple Lines",
+        "lat": "40.0222222",
+        "long": "-75.16"
+    },
+    {
+        "id": "90201",
+        "name": "Newark",
+        "line": "Wilmington Newark Line",
+        "lat": "39.6705556",
+        "long": "-75.7527778"
+    },
+    {
+        "id": "90202",
+        "name": "Churchmans Crossing",
+        "line": "Wilmington Newark Line",
+        "lat": "39.695",
+        "long": "-75.6725"
+    },
+    {
+        "id": "90203",
+        "name": "Wilmington",
+        "line": "Wilmington Newark Line",
+        "lat": "39.7372222",
+        "long": "-75.5511111"
+    },
+    {
+        "id": "90204",
+        "name": "Claymont",
+        "line": "Wilmington Newark Line",
+        "lat": "39.7977778",
+        "long": "-75.4522222"
+    },
+    {
+        "id": "90205",
+        "name": "Marcus Hook",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8216667",
+        "long": "-75.4194444"
+    },
+    {
+        "id": "90206",
+        "name": "Highland Avenue",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8336111",
+        "long": "-75.3933333"
+    },
+    {
+        "id": "90207",
+        "name": "Chester Transportation Center",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8497222",
+        "long": "-75.36"
+    },
+    {
+        "id": "90208",
+        "name": "Eddystone",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8572222",
+        "long": "-75.3422222"
+    },
+    {
+        "id": "90209",
+        "name": "Crum Lynne",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8719444",
+        "long": "-75.3311111"
+    },
+    {
+        "id": "90210",
+        "name": "Ridley Park",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8805556",
+        "long": "-75.3222222"
+    },
+    {
+        "id": "90211",
+        "name": "Prospect Park",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8883333",
+        "long": "-75.3088889"
+    },
+    {
+        "id": "90212",
+        "name": "Norwood",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8916667",
+        "long": "-75.3016667"
+    },
+    {
+        "id": "90213",
+        "name": "Glenolden",
+        "line": "Wilmington Newark Line",
+        "lat": "39.8963889",
+        "long": "-75.29"
+    },
+    {
+        "id": "90214",
+        "name": "Folcroft",
+        "line": "Wilmington Newark Line",
+        "lat": "39.9005556",
+        "long": "-75.2797222"
+    },
+    {
+        "id": "90215",
+        "name": "Sharon Hill",
+        "line": "Wilmington Newark Line",
+        "lat": "39.9044444",
+        "long": "-75.2708333"
+    },
+    {
+        "id": "90216",
+        "name": "Curtis Park",
+        "line": "Wilmington Newark Line",
+        "lat": "39.9080556",
+        "long": "-75.265"
+    },
+    {
+        "id": "90217",
+        "name": "Darby",
+        "line": "Wilmington Newark Line",
+        "lat": "39.9130556",
+        "long": "-75.2544444"
+    },
+    {
+        "id": "90218",
+        "name": "Allegheny",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0036111",
+        "long": "-75.1647222"
+    },
+    {
+        "id": "90219",
+        "name": "East Falls",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0113889",
+        "long": "-75.1919444"
+    },
+    {
+        "id": "90220",
+        "name": "Wissahickon",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0166667",
+        "long": "-75.2102778"
+    },
+    {
+        "id": "90221",
+        "name": "Manayunk",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0269444",
+        "long": "-75.225"
+    },
+    {
+        "id": "90222",
+        "name": "Ivy Ridge",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0341667",
+        "long": "-75.2355556"
+    },
+    {
+        "id": "90223",
+        "name": "Miquon",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0586111",
+        "long": "-75.2663889"
+    },
+    {
+        "id": "90224",
+        "name": "Spring Mill",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0741667",
+        "long": "-75.2861111"
+    },
+    {
+        "id": "90225",
+        "name": "Conshohocken",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.0722222",
+        "long": "-75.3086111"
+    },
+    {
+        "id": "90226",
+        "name": "Norristown Transportation Center",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.1127778",
+        "long": "-75.3441667"
+    },
+    {
+        "id": "90227",
+        "name": "Main Street, Norristown",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.1172222",
+        "long": "-75.3486111"
+    },
+    {
+        "id": "90228",
+        "name": "Elm Street, Norristown",
+        "line": "Manayunk Norristown Line",
+        "lat": "40.1202778",
+        "long": "-75.3475"
+    },
+    {
+        "id": "90301",
+        "name": "Elwyn",
+        "line": "Media Elwyn Line",
+        "lat": "39.9075",
+        "long": "-75.4116667"
+    },
+    {
+        "id": "90302",
+        "name": "Media",
+        "line": "Media Elwyn Line",
+        "lat": "39.9144444",
+        "long": "-75.395"
+    },
+    {
+        "id": "90303",
+        "name": "Moylan-Rose Valley",
+        "line": "Media Elwyn Line",
+        "lat": "39.9061111",
+        "long": "-75.3886111"
+    },
+    {
+        "id": "90304",
+        "name": "Wallingford",
+        "line": "Media Elwyn Line",
+        "lat": "39.9036111",
+        "long": "-75.3719444"
+    },
+    {
+        "id": "90305",
+        "name": "Swarthmore",
+        "line": "Media Elwyn Line",
+        "lat": "39.9022222",
+        "long": "-75.3508333"
+    },
+    {
+        "id": "90306",
+        "name": "Morton",
+        "line": "Media Elwyn Line",
+        "lat": "39.9077778",
+        "long": "-75.3288889"
+    },
+    {
+        "id": "90307",
+        "name": "Secane",
+        "line": "Media Elwyn Line",
+        "lat": "39.9158333",
+        "long": "-75.3097222"
+    },
+    {
+        "id": "90308",
+        "name": "Primos",
+        "line": "Media Elwyn Line",
+        "lat": "39.9216667",
+        "long": "-75.2983333"
+    },
+    {
+        "id": "90309",
+        "name": "Clifton-Aldan",
+        "line": "Media Elwyn Line",
+        "lat": "39.9266667",
+        "long": "-75.2902778"
+    },
+    {
+        "id": "90310",
+        "name": "Gladstone",
+        "line": "Media Elwyn Line",
+        "lat": "39.9327778",
+        "long": "-75.2822222"
+    },
+    {
+        "id": "90311",
+        "name": "Lansdowne",
+        "line": "Media Elwyn Line",
+        "lat": "39.9375",
+        "long": "-75.2708333"
+    },
+    {
+        "id": "90312",
+        "name": "Fernwood–Yeadon",
+        "line": "Media Elwyn Line",
+        "lat": "39.9397222",
+        "long": "-75.2558333"
+    },
+    {
+        "id": "90313",
+        "name": "Angora",
+        "line": "Media Elwyn Line",
+        "lat": "39.9447222",
+        "long": "-75.2386111"
+    },
+    {
+        "id": "90314",
+        "name": "49th Street",
+        "line": "Media Elwyn Line",
+        "lat": "39.9436111",
+        "long": "-75.2166667"
+    },
+    {
+        "id": "90315",
+        "name": "Noble",
+        "line": "West Trenton Line",
+        "lat": "40.1044444",
+        "long": "-75.1241667"
+    },
+    {
+        "id": "90316",
+        "name": "Rydal",
+        "line": "West Trenton Line",
+        "lat": "40.1075",
+        "long": "-75.1105556"
+    },
+    {
+        "id": "90317",
+        "name": "Meadowbrook",
+        "line": "West Trenton Line",
+        "lat": "40.1113889",
+        "long": "-75.0925"
+    },
+    {
+        "id": "90318",
+        "name": "Bethayres",
+        "line": "West Trenton Line",
+        "lat": "40.1166667",
+        "long": "-75.0683333"
+    },
+    {
+        "id": "90319",
+        "name": "Philmont",
+        "line": "West Trenton Line",
+        "lat": "40.1219444",
+        "long": "-75.0436111"
+    },
+    {
+        "id": "90320",
+        "name": "Forest Hills",
+        "line": "West Trenton Line",
+        "lat": "40.1277778",
+        "long": "-75.0205556"
+    },
+    {
+        "id": "90321",
+        "name": "Somerton",
+        "line": "West Trenton Line",
+        "lat": "40.1305556",
+        "long": "-75.0119444"
+    },
+    {
+        "id": "90322",
+        "name": "Trevose",
+        "line": "West Trenton Line",
+        "lat": "40.1402778",
+        "long": "-74.9825"
+    },
+    {
+        "id": "90323",
+        "name": "Neshaminy Falls",
+        "line": "West Trenton Line",
+        "lat": "40.1469444",
+        "long": "-74.9616667"
+    },
+    {
+        "id": "90324",
+        "name": "Langhorne",
+        "line": "West Trenton Line",
+        "lat": "40.1608333",
+        "long": "-74.9125"
+    },
+    {
+        "id": "90325",
+        "name": "Woodbourne",
+        "line": "West Trenton Line",
+        "lat": "40.1925",
+        "long": "-74.8891667"
+    },
+    {
+        "id": "90326",
+        "name": "Yardley",
+        "line": "West Trenton Line",
+        "lat": "40.2352778",
+        "long": "-74.8305556"
+    },
+    {
+        "id": "90327",
+        "name": "West Trenton",
+        "line": "West Trenton Line",
+        "lat": "40.2577778",
+        "long": "-74.8152778"
+    },
+    {
+        "id": "90401",
+        "name": "Airport Terminals E & F",
+        "line": "Airport Line",
+        "lat": "39.8794444",
+        "long": "-75.2397222"
+    },
+    {
+        "id": "90402",
+        "name": "Airport Terminals C & D",
+        "line": "Airport Line",
+        "lat": "39.8780556",
+        "long": "-75.24"
+    },
+    {
+        "id": "90403",
+        "name": "Airport Terminal B",
+        "line": "Airport Line",
+        "lat": "39.8772222",
+        "long": "-75.2413889"
+    },
+    {
+        "id": "90404",
+        "name": "Airport Terminal A",
+        "line": "Airport Line",
+        "lat": "39.8761111",
+        "long": "-75.2452778"
+    },
+    {
+        "id": "90405",
+        "name": "Eastwick Station",
+        "line": "Airport Line",
+        "lat": "39.8927778",
+        "long": "-75.2438889"
+    },
+    {
+        "id": "90406",
+        "name": "University City",
+        "line": "Multiple Lines",
+        "lat": "39.9480556",
+        "long": "-75.1902778"
+    },
+    {
+        "id": "90407",
+        "name": "Fern Rock Transportation Center",
+        "line": "Multiple Lines",
+        "lat": "40.0405556",
+        "long": "-75.1347222"
+    },
+    {
+        "id": "90408",
+        "name": "Melrose Park",
+        "line": "Multiple Lines",
+        "lat": "40.0594444",
+        "long": "-75.1291667"
+    },
+    {
+        "id": "90409",
+        "name": "Elkins Park",
+        "line": "Multiple Lines",
+        "lat": "40.0713889",
+        "long": "-75.1277778"
+    },
+    {
+        "id": "90410",
+        "name": "Jenkintown-Wyncote",
+        "line": "Multiple Lines",
+        "lat": "40.0927778",
+        "long": "-75.1375"
+    },
+    {
+        "id": "90411",
+        "name": "Glenside",
+        "line": "Multiple Lines",
+        "lat": "40.1013889",
+        "long": "-75.1536111"
+    },
+    {
+        "id": "90412",
+        "name": "Ardsley",
+        "line": "Warminster Line",
+        "lat": "40.1141667",
+        "long": "-75.1530556"
+    },
+    {
+        "id": "90413",
+        "name": "Roslyn",
+        "line": "Warminster Line",
+        "lat": "40.1208333",
+        "long": "-75.1341667"
+    },
+    {
+        "id": "90414",
+        "name": "Crestmont",
+        "line": "Warminster Line",
+        "lat": "40.1333333",
+        "long": "-75.1186111"
+    },
+    {
+        "id": "90415",
+        "name": "Willow Grove",
+        "line": "Warminster Line",
+        "lat": "40.1438889",
+        "long": "-75.1141667"
+    },
+    {
+        "id": "90416",
+        "name": "Hatboro",
+        "line": "Warminster Line",
+        "lat": "40.1761111",
+        "long": "-75.1025"
+    },
+    {
+        "id": "90417",
+        "name": "Warminster",
+        "line": "Warminster Line",
+        "lat": "40.1952778",
+        "long": "-75.0891667"
+    },
+    {
+        "id": "90501",
+        "name": "Thorndale",
+        "line": "Paoli Thorndale Line",
+        "lat": "39.9927778",
+        "long": "-75.7636111"
+    },
+    {
+        "id": "90502",
+        "name": "Downingtown",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0022222",
+        "long": "-75.7102778"
+    },
+    {
+        "id": "90503",
+        "name": "Whitford",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0147222",
+        "long": "-75.6380556"
+    },
+    {
+        "id": "90504",
+        "name": "Exton",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0191667",
+        "long": "-75.6227778"
+    },
+    {
+        "id": "90505",
+        "name": "Malvern",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0363889",
+        "long": "-75.5155556"
+    },
+    {
+        "id": "90506",
+        "name": "Paoli",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0430556",
+        "long": "-75.4827778"
+    },
+    {
+        "id": "90507",
+        "name": "Daylesford",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0430556",
+        "long": "-75.4605556"
+    },
+    {
+        "id": "90508",
+        "name": "Berwyn",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0480556",
+        "long": "-75.4422222"
+    },
+    {
+        "id": "90509",
+        "name": "Devon",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0472222",
+        "long": "-75.4227778"
+    },
+    {
+        "id": "90510",
+        "name": "Strafford",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0494444",
+        "long": "-75.4030556"
+    },
+    {
+        "id": "90511",
+        "name": "Wayne",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0458333",
+        "long": "-75.3866667"
+    },
+    {
+        "id": "90512",
+        "name": "St. Davids",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0438889",
+        "long": "-75.3725"
+    },
+    {
+        "id": "90513",
+        "name": "Radnor",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0447222",
+        "long": "-75.3588889"
+    },
+    {
+        "id": "90514",
+        "name": "Villanova",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0383333",
+        "long": "-75.3416667"
+    },
+    {
+        "id": "90515",
+        "name": "Rosemont",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0277778",
+        "long": "-75.3266667"
+    },
+    {
+        "id": "90516",
+        "name": "Bryn Mawr",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0219444",
+        "long": "-75.3163889"
+    },
+    {
+        "id": "90517",
+        "name": "Haverford",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0138889",
+        "long": "-75.2997222"
+    },
+    {
+        "id": "90518",
+        "name": "Ardmore",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0083333",
+        "long": "-75.2902778"
+    },
+    {
+        "id": "90519",
+        "name": "Wynnewood",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0027778",
+        "long": "-75.2725"
+    },
+    {
+        "id": "90520",
+        "name": "Narberth",
+        "line": "Paoli Thorndale Line",
+        "lat": "40.0047222",
+        "long": "-75.2613889"
+    },
+    {
+        "id": "90521",
+        "name": "Merion",
+        "line": "Paoli Thorndale Line",
+        "lat": "39.9986111",
+        "long": "-75.2513889"
+    },
+    {
+        "id": "90522",
+        "name": "Overbrook",
+        "line": "Paoli Thorndale Line",
+        "lat": "39.9894444",
+        "long": "-75.2494444"
+    },
+    {
+        "id": "90523",
+        "name": "North Hills",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.1119444",
+        "long": "-75.1694444"
+    },
+    {
+        "id": "90524",
+        "name": "Oreland",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.1183333",
+        "long": "-75.1838889"
+    },
+    {
+        "id": "90525",
+        "name": "Fort Washington",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.1358333",
+        "long": "-75.2122222"
+    },
+    {
+        "id": "90526",
+        "name": "Ambler",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.1536111",
+        "long": "-75.2247222"
+    },
+    {
+        "id": "90527",
+        "name": "Penllyn",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.17",
+        "long": "-75.2441667"
+    },
+    {
+        "id": "90528",
+        "name": "Gwynedd Valley",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.1847222",
+        "long": "-75.2569444"
+    },
+    {
+        "id": "90529",
+        "name": "North Wales",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2141667",
+        "long": "-75.2772222"
+    },
+    {
+        "id": "90530",
+        "name": "Pennbrook",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2302778",
+        "long": "-75.2816667"
+    },
+    {
+        "id": "90531",
+        "name": "Lansdale",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2427778",
+        "long": "-75.285"
+    },
+    {
+        "id": "90532",
+        "name": "Fortuna",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2594444",
+        "long": "-75.2661111"
+    },
+    {
+        "id": "90533",
+        "name": "Colmar",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2683333",
+        "long": "-75.2544444"
+    },
+    {
+        "id": "90534",
+        "name": "Link Belt",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2738889",
+        "long": "-75.2466667"
+    },
+    {
+        "id": "90535",
+        "name": "Chalfont",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2877778",
+        "long": "-75.2097222"
+    },
+    {
+        "id": "90536",
+        "name": "New Britain",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2975",
+        "long": "-75.1797222"
+    },
+    {
+        "id": "90537",
+        "name": "Delaware Valley College",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.2972222",
+        "long": "-75.1616667"
+    },
+    {
+        "id": "90538",
+        "name": "Doylestown",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.3063889",
+        "long": "-75.1302778"
+    },
+    {
+        "id": "90539",
+        "name": "9th Street Station",
+        "line": "Lansdale Doylestown Line",
+        "lat": "40.250051",
+        "long": "-75.279147"
+    },
+    {
+        "id": "90701",
+        "name": "Trenton Transit Center",
+        "line": "Trenton Line",
+        "lat": "40.2177778",
+        "long": "-74.755"
+    },
+    {
+        "id": "90702",
+        "name": "Levittown",
+        "line": "Trenton Line",
+        "lat": "40.1402778",
+        "long": "-74.8169444"
+    },
+    {
+        "id": "90703",
+        "name": "Bristol",
+        "line": "Trenton Line",
+        "lat": "40.1047222",
+        "long": "-74.8547222"
+    },
+    {
+        "id": "90704",
+        "name": "Croydon",
+        "line": "Trenton Line",
+        "lat": "40.0936111",
+        "long": "-74.9066667"
+    },
+    {
+        "id": "90705",
+        "name": "Eddington",
+        "line": "Trenton Line",
+        "lat": "40.0830556",
+        "long": "-74.9336111"
+    },
+    {
+        "id": "90706",
+        "name": "Cornwells Heights",
+        "line": "Trenton Line",
+        "lat": "40.0716667",
+        "long": "-74.9522222"
+    },
+    {
+        "id": "90707",
+        "name": "Torresdale",
+        "line": "Trenton Line",
+        "lat": "40.0544444",
+        "long": "-74.9844444"
+    },
+    {
+        "id": "90708",
+        "name": "Holmesburg Junction",
+        "line": "Trenton Line",
+        "lat": "40.0327778",
+        "long": "-75.0236111"
+    },
+    {
+        "id": "90709",
+        "name": "Tacony",
+        "line": "Trenton Line",
+        "lat": "40.0233333",
+        "long": "-75.0388889"
+    },
+    {
+        "id": "90710",
+        "name": "Bridesburg",
+        "line": "Trenton Line",
+        "lat": "40.0105556",
+        "long": "-75.0697222"
+    },
+    {
+        "id": "90711",
+        "name": "North Philadelphia",
+        "line": "Trenton Line",
+        "lat": "39.9972222",
+        "long": "-75.155",
+    },
+    {
+        "id": "90712",
+        "name": "Wister",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0361111",
+        "long": "-75.1611111"
+    },
+    {
+        "id": "90713",
+        "name": "Germantown",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0375",
+        "long": "-75.1716667"
+    },
+    {
+        "id": "90714",
+        "name": "Washington Lane",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0508333",
+        "long": "-75.1713889"
+    },
+    {
+        "id": "90715",
+        "name": "Stenton",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0605556",
+        "long": "-75.1786111"
+    },
+    {
+        "id": "90716",
+        "name": "Sedgwick",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0627778",
+        "long": "-75.1852778"
+    },
+    {
+        "id": "90717",
+        "name": "Mount Airy",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0652778",
+        "long": "-75.1908333"
+    },
+    {
+        "id": "90718",
+        "name": "Wyndmoor",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0733333",
+        "long": "-75.1966667"
+    },
+    {
+        "id": "90719",
+        "name": "Gravers",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0775",
+        "long": "-75.2016667"
+    },
+    {
+        "id": "90720",
+        "name": "Chestnut Hill East",
+        "line": "Chestnut Hill East Line",
+        "lat": "40.0811111",
+        "long": "-75.2072222"
+    },
+    {
+        "id": "90801",
+        "name": "Chestnut Hill West",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0763889",
+        "long": "-75.2083333"
+    },
+    {
+        "id": "90802",
+        "name": "Highland",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0705556",
+        "long": "-75.2111111"
+    },
+    {
+        "id": "90803",
+        "name": "St. Martins",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0658333",
+        "long": "-75.2044444"
+    },
+    {
+        "id": "90804",
+        "name": "Allen Lane",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0575",
+        "long": "-75.1947222"
+    },
+    {
+        "id": "90805",
+        "name": "Carpenter",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0511111",
+        "long": "-75.1913889"
+    },
+    {
+        "id": "90806",
+        "name": "Upsal",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0425",
+        "long": "-75.19"
+    },
+    {
+        "id": "90807",
+        "name": "Tulpehocken",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0352778",
+        "long": "-75.1869444"
+    },
+    {
+        "id": "90808",
+        "name": "Chelten Avenue",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.03",
+        "long": "-75.1808333"
+    },
+    {
+        "id": "90809",
+        "name": "Queen Lane",
+        "line": "Chestnut Hill West Line",
+        "lat": "40.0233333",
+        "long": "-75.1780556"
+    },
+    {
+        "id": "90810",
+        "name": "North Philadelphia",
+        "line": "Chestnut Hill West Line",
+        "lat": "39.9977778",
+        "long": "-75.1563889"
+    },
+    {
+        "id": "90811",
+        "name": "Olney",
+        "line": "Fox Chase Line",
+        "lat": "40.0333333",
+        "long": "-75.1227778"
+    },
+    {
+        "id": "90812",
+        "name": "Lawndale",
+        "line": "Fox Chase Line",
+        "lat": "40.0513889",
+        "long": "-75.1030556"
+    },
+    {
+        "id": "90813",
+        "name": "Cheltenham",
+        "line": "Fox Chase Line",
+        "lat": "40.0580556",
+        "long": "-75.0927778"
+    },
+    {
+        "id": "90814",
+        "name": "Ryers",
+        "line": "Fox Chase Line",
+        "lat": "40.0641667",
+        "long": "-75.0863889"
+    },
+    {
+        "id": "90815",
+        "name": "Fox Chase",
+        "line": "Fox Chase Line",
+        "lat": "40.0763889",
+        "long": "-75.0833333"
+    },
+];

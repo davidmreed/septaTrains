@@ -5,7 +5,10 @@
     <aura:registerEvent name="mapSelection" type="c:navigateEvent" />
                
     <ltng:require styles="{!$Resource.Leaflet + '/leaflet.css'}" 
-                  scripts="{! join(', ', $Resource.Leaflet + '/leaflet-src.js', $Resource.septaStationNames) }"
+                  scripts="{! join(', ', 
+                              $Resource.Leaflet + '/leaflet-src.js', 
+                              $Resource.septaStationNames,
+                              $Resource.septaStationLocations) }"
                   afterScriptsLoaded="{! c.onScriptsLoaded }" /> 
     
     <aura:handler name="init" value="{! this }" action="{! c.doInit }" />

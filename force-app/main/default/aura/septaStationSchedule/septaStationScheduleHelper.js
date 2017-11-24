@@ -5,7 +5,8 @@
         var selection = component.get('v.selectedEntity');
         
         if (selection !== null) {
-            action.setParam('station', component.get('v.selectedEntity'));
+            action.setParam('station', septaStationMapper.convert_display(selection['entity']));
+
             action.setCallback(this, function(result) {
                 var j = result.getReturnValue();
     
