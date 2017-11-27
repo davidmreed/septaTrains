@@ -1,5 +1,5 @@
 <aura:component extensible="true" abstract="true">
-    <aura:attribute name="selectedEntity" type="Object" access="PUBLIC" />
+    <aura:attribute name="selectedEntity" type="String" access="PUBLIC" />
     <aura:attribute name="displayName" type="String" access="PUBLIC" />
     <aura:attribute name="timetable" type="Object[]" access="PUBLIC" />
     <aura:attribute name="columns" type="List" access="PUBLIC" />

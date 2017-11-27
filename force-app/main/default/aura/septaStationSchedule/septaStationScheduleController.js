@@ -5,12 +5,12 @@
             { label: 'Dest.', fieldName: 'DisplayName', type: 'string'},
             { label: 'Departs', fieldName: 'departureTime', type: 'string'}
         ]);
-        component.set('v.displayName', component.get('v.selectedEntity.entity'));
+        component.set('v.displayName', component.get('v.selectedEntity'));
     },
     
     handleSelection : function(component, event, helper) {
         helper.updateSchedule(component, event, helper);
-        component.set('v.displayName', component.get('v.selectedEntity.entity'));
+        component.set('v.displayName', component.get('v.selectedEntity'));
     },
     
     handleStationClick : function(component, event, helper) {

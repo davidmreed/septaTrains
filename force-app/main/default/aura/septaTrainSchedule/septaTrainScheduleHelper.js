@@ -5,7 +5,7 @@
         var selection = component.get('v.selectedEntity');
         
         if (selection !== null) {
-            action.setParam('train', component.get('v.selectedEntity.entity'));
+            action.setParam('train', selection);
             action.setCallback(this, function(result) {
                 var j = JSON.parse(result.getReturnValue());
                 var entries = j.filter(function(t) { return t['act_tm'] === 'na' });

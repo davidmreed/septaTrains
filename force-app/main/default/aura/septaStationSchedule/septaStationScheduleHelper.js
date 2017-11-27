@@ -5,7 +5,7 @@
         var selection = component.get('v.selectedEntity');
         
         if (selection !== null) {
-            action.setParam('station', septaStationMapper.convert_display(selection['entity']));
+            action.setParam('station', septaStationMapper.convert_display(selection));
 
             action.setCallback(this, function(result) {
                 var j = result.getReturnValue();
@@ -20,7 +20,7 @@
                     for (var e of j.timetable) {
                         e['DisplayName'] = septaStationMapper.convert_api(e.destination);
                     }
-                    component.set('v.timetable', j.timetable);
+                    component.set('v.timetable', j.timetable.filter(function(x) { return !x.trainNumber.startswith('A'); }));
                 }            
             });
             
