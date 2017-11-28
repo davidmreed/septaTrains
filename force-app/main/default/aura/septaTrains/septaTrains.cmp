@@ -1,14 +1,12 @@
 <aura:component implements="force:appHostable" controller="septaTrainsServerController">
     <aura:attribute name="map" type="Object" access="PRIVATE" />
     <aura:attribute name="popupStore" type="Object" access="PRIVATE" />
+    <aura:attribute name="stationData" type="Object[]" access="PRIVATE" />
     
     <aura:registerEvent name="mapSelection" type="c:navigateEvent" />
                
     <ltng:require styles="{!$Resource.Leaflet + '/leaflet.css'}" 
-                  scripts="{! join(', ', 
-                              $Resource.Leaflet + '/leaflet-src.js', 
-                              $Resource.septaStationNames,
-                              $Resource.septaStationLocations) }"
+                  scripts="{! $Resource.Leaflet + '/leaflet-src.js'}"
                   afterScriptsLoaded="{! c.onScriptsLoaded }" /> 
     
     <aura:handler name="init" value="{! this }" action="{! c.doInit }" />

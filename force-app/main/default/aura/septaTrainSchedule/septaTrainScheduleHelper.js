@@ -7,14 +7,7 @@
         if (selection !== null) {
             action.setParam('train', selection);
             action.setCallback(this, function(result) {
-                var j = JSON.parse(result.getReturnValue());
-                var entries = j.filter(function(t) { return t['act_tm'] === 'na' });
-
-                for (var e of entries) {
-                    e['DisplayName'] = septaStationMapper.convert_api(e['station']);
-                }
-
-                component.set('v.timetable', entries);
+                component.set('v.timetable', result.getReturnValue().timetable);
             });
             
             $A.enqueueAction(action);

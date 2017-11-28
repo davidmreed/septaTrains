@@ -1,4 +1,4 @@
-<aura:component extends="c:septaSchedule" controller="septaTrainScheduleServerController" implements="flexipage:availableForAllPageTypes">    
+<aura:component extends="c:septaSchedule" controller="septaStationScheduleServerController" implements="flexipage:availableForAllPageTypes">    
     <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
     <aura:handler name="change" value="{! v.selectedEntity }" action="{! c.handleSelection }" />    
 </aura:component>

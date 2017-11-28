@@ -2,7 +2,7 @@
     doInit : function(component, event, helper) {
         component.set('v.columns', [
             { label: 'Train #', fieldName: 'trainNumber', type: 'string'},
-            { label: 'Dest.', fieldName: 'DisplayName', type: 'string'},
+            { label: 'Dest.', fieldName: 'destinationDisplayName', type: 'string'},
             { label: 'Departs', fieldName: 'departureTime', type: 'string'}
         ]);
         component.set('v.displayName', component.get('v.selectedEntity'));
