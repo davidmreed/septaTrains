@@ -1,0 +1,68 @@
+[
+    {
+        "station": "Temple U",
+        "sched_tm": "2:58 pm",
+        "est_tm": "2:58 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Jefferson Station",
+        "sched_tm": "3:04 pm",
+        "est_tm": "3:04 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Suburban Station",
+        "sched_tm": "3:09 pm",
+        "est_tm": "3:09 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "30th Street Station",
+        "sched_tm": "3:13 pm",
+        "est_tm": "3:13 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "University City",
+        "sched_tm": "3:17 pm",
+        "est_tm": "3:17 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Chester TC",
+        "sched_tm": "3:31 pm",
+        "est_tm": "3:31 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Marcus Hook",
+        "sched_tm": "3:38 pm",
+        "est_tm": "3:38 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Claymont",
+        "sched_tm": "3:41 pm",
+        "est_tm": "3:41 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Wilmington",
+        "sched_tm": "3:55 pm",
+        "est_tm": "3:55 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Churchmans Crossing",
+        "sched_tm": "4:06 pm",
+        "est_tm": "4:06 pm",
+        "act_tm": "na"
+    },
+    {
+        "station": "Newark",
+        "sched_tm": "4:14 pm",
+        "est_tm": "4:14 pm",
+        "act_tm": "na"
+    }
+]

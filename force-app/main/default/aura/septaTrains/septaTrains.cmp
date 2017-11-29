@@ -1,4 +1,4 @@
-<aura:component implements="force:appHostable" controller="septaTrainsServerController">
+<aura:component implements="flexipage:availableForAllPageTypes" controller="septaTrainsServerController">
     <aura:attribute name="map" type="Object" access="PRIVATE" />
     <aura:attribute name="popupStore" type="Object" access="PRIVATE" />
     <aura:attribute name="stationData" type="Object[]" access="PRIVATE" />

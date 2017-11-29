@@ -49,6 +49,7 @@ public class septaStationScheduleServerControllerTEST {
         System.assertEquals('Norristown', r.timetable[0].destinationApiName);
     }
     
+    @isTest
     public static void testGetStationTimetableHTTPError() {
         septaStationScheduleServerController.septaStationTimetableResponse r;
         
@@ -61,6 +62,7 @@ public class septaStationScheduleServerControllerTEST {
         System.assertEquals(null, r.timetable);
     }
     
+    @isTest
     public static void testGetStationTimetableAPIError() {
         septaStationScheduleServerController.septaStationTimetableResponse r;
         

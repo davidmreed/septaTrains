@@ -25,30 +25,30 @@
     createTrainMapMarker: function(component, data, map) {
         var title, m, body;
 
-        title = 'Train #' + data.trainno + ' (' + data.line + ')';
+        title = 'Train #' + data.trainNumber + ' (' + data.line + ')';
         body = '<p>' +
-               '<strong>Train #' + data.trainno + '</strong>' +
+               '<strong>Train #' + data.trainNumber + '</strong>' +
                '<br /><span style="text-transform: capitalize;">' + data.service.toLowerCase() + '</span> ' +
-               data.consist.split(',').length + '-car train' +
+               data.cars.length + '-car train' +
                ' from <strong>' + data.sourceDisplayName + 
-               '</strong> to <strong>' + data.destDisplayName + '</strong>, ' +
+               '</strong> to <strong>' + data.destinationDisplayName + '</strong>, ' +
                'running on the <strong>' + data.line + '</strong> line' +
-               '<br />' + 'Next stop <strong>' + data.nextstopDisplayName + '</strong>' +
-               '<br />' + (data.late != 0 ? ('<span style="color: red;">' + 
-               data.late + ' minute' + (data.late == 1 ? '' : 's') + ' late</span>') : 'On time') +
+               '<br />' + 'Next stop <strong>' + data.nextStopDisplayName + '</strong>' +
+               '<br />' + (data.minutesLate != 0 ? ('<span style="color: red;">' + 
+               data.minutesLate + ' minute' + (data.minutesLate == 1 ? '' : 's') + ' late</span>') : 'On time') +
                '</p>';
         
-        m = L.marker([data.lat, data.lon], {'title': title })
+        m = L.marker([data.lat, data.lng], {'title': title })
              .bindPopup(body)
              .addTo(map)
              .on('popupopen', function(e) {
                 var evt = component.getEvent('mapSelection');
             
-                evt.setParam('entity', { entity: data.trainno, type: 'TRAIN', data: data });
+                evt.setParam('entity', { entity: data.trainNumber, type: 'TRAIN', data: data });
                 evt.fire();
             });
         
-        component.get('v.popupStore')[data.trainno] = m;
+        component.get('v.popupStore')[data.trainNumber] = m;
     },
     
     populateMap : function(component, helper, map) {        

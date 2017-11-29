@@ -32,7 +32,18 @@ public class septaTrainScheduleServerController {
 
             if (res.getStatusCode() == 200) {
                 List<JSONseptaTrainTimetableItem> items;
+
                 try {
+                    // Check for a non-HTTP error first.
+                    Object x = JSON.deserializeUntyped(res.getBody());
+
+                    if (x instanceof Map<String, Object>) {
+                        Map<String, Object> m = (Map<String, Object>)x;
+                        // If we got a map, it is indicating an error.
+                        response.error = (String)m.get('error');
+                        return response;
+                    }
+
                     items = (List<JSONseptaTrainTimetableItem>)JSON.deserialize(res.getBody(), List<JSONseptaTrainTimetableItem>.class);
 
                     for (JSONseptaTrainTimetableItem i : items) {

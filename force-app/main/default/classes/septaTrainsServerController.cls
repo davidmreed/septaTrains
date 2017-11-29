@@ -1,20 +1,36 @@
 public class septaTrainsServerController {
+    private class JSONseptaTrainPosition {
+        public String lat;
+        public String lon;
+        public String trainno;
+        public String service;
+        public String dest;
+        public String nextstop;
+        public String destDisplayName;
+        public String nextstopDisplayName;
+        public String line;
+        public String consist;
+        public Integer late;
+        public String SOURCE;
+        public String sourceDisplayName;
+        public String TRACK;
+        public String TRACK_CHANGE;
+    }
+
     public class septaTrainPosition {
         @AuraEnabled public String lat;
-        @AuraEnabled public String lon;
-        @AuraEnabled public String trainno;
+        @AuraEnabled public String lng;
+        @AuraEnabled public String trainNumber;
         @AuraEnabled public String service;
-        @AuraEnabled public String dest;
-        @AuraEnabled public String nextstop;
-        @AuraEnabled public String destDisplayName;
-        @AuraEnabled public String nextstopDisplayName;
+        @AuraEnabled public String destinationApiName;
+        @AuraEnabled public String nextStopApiName;
+        @AuraEnabled public String destinationDisplayName;
+        @AuraEnabled public String nextStopDisplayName;
         @AuraEnabled public String line;
-        @AuraEnabled public String consist;
-        @AuraEnabled public Integer late;
-        @AuraEnabled public String SOURCE;
+        @AuraEnabled public String[] cars;
+        @AuraEnabled public Integer minutesLate;
+        @AuraEnabled public String sourceApiName;
         @AuraEnabled public String sourceDisplayName;
-        @AuraEnabled public String TRACK;
-        @AuraEnabled public String TRACK_CHANGE;
     }
     
     public class septaTrainPositionResponse {
@@ -38,13 +54,31 @@ public class septaTrainsServerController {
 
             if (res.getStatusCode() == 200) {
                 try {
-                    response.positions = (List<septaTrainPosition>)JSON.deserialize(res.getBody(), 
-                                          List<septaTrainPosition>.class);
+                    List<JSONseptaTrainPosition> incoming;
+
+                    response.positions = new List<septaTrainPosition>();
+                    incoming = (List<JSONseptaTrainPosition>)JSON.deserialize(res.getBody(), 
+                        List<JSONseptaTrainPosition>.class);
                     
-                    for (septaTrainPosition s : response.positions) {
-                        s.destDisplayName = (mapping.containsKey(s.dest) ? mapping.get(s.dest) : s.dest);
-                        s.nextstopDisplayName = (mapping.containsKey(s.nextstop) ? mapping.get(s.nextstop) : s.nextstop);
-                        s.sourceDisplayName = (mapping.containsKey(s.SOURCE) ? mapping.get(s.SOURCE) : s.SOURCE);
+                    for (JSONseptaTrainPosition s : incoming) {
+                        septaTrainPosition tp = new septaTrainPosition();
+                        
+                        tp.lat = s.lat;
+                        tp.lng = s.lon;
+                        tp.trainNumber = s.trainno;
+                        tp.service = s.service;
+                        tp.destinationApiName = s.dest;
+                        tp.nextStopApiName = s.nextstop;
+                        tp.line = s.line;
+                        tp.cars = s.consist.split(',');
+                        tp.minutesLate = s.late;
+                        tp.sourceApiName = s.SOURCE;
+
+                        tp.destinationDisplayName = (mapping.containsKey(s.dest) ? mapping.get(s.dest) : s.dest);
+                        tp.nextStopDisplayName = (mapping.containsKey(s.nextstop) ? mapping.get(s.nextstop) : s.nextstop);
+                        tp.sourceDisplayName = (mapping.containsKey(s.SOURCE) ? mapping.get(s.SOURCE) : s.SOURCE);
+
+                        response.positions.add(tp);
                     }
                 } catch (Exception e) {
                     response.error = 'Failed to parse response from SEPTA TrainView API.';
