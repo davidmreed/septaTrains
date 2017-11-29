@@ -4,6 +4,9 @@
             { label: 'Station', fieldName: 'destinationDisplayName', type: 'string'},
             { label: 'Est. Time', fieldName: 'arrivalTime', type: 'string'}
         ]);
+        if (component.get('v.selectedEntity')) {
+            helper.updateSchedule(component, event, helper);
+        }
     },
     
     handleSelection : function(component, event, helper) {

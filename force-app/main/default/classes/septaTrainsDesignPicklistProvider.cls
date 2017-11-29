@@ -8,7 +8,10 @@ global class septaTrainsDesignPicklistProvider extends VisualEditor.DynamicPickL
         // Load station names from JSON.
 
         for (septaTrainsDataHandler.septaStation s : septaTrainsDataHandler.loadData()) {
-            stationNames.addRow(new VisualEditor.DataRow(s.api_name, s.name));
+            stationNames.addRow(
+                new VisualEditor.DataRow(s.name, 
+                                         (String.isNotBlank(s.api_name) ? s.api_name : s.name))
+            );
         }
 
         return stationNames;
