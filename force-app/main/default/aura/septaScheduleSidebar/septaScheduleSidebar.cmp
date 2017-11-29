@@ -9,7 +9,10 @@
         <c:septaTrainSchedule selectedEntity="{! v.selectedTrain }" />
         <aura:set attribute="else">
             <aura:if isTrue="{! v.selectedEntity.type == 'STATION' }">
-            	<c:septaStationSchedule selectedEntity="{! v.selectedStation }" />
+                <c:septaStationSchedule selectedEntity="{! v.selectedStation }" />
+                <aura:set attribute="else">
+                    <p class="slds-align_absolute-center slds-text-title_caps">Please select a train or station to view schedule information.</p>
+                </aura:set>
             </aura:if>
         </aura:set>
     </aura:if>
