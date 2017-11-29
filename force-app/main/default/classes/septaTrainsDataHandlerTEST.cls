@@ -1,5 +1,3 @@
-public with sharing class septaTrainsDataHandlerTEST {
-    public septaTrainsDataHandlerTEST() {
-
-    }
+@isTest
+public class septaTrainsDataHandlerTEST {
 }
