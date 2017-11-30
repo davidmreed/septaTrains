@@ -1,9 +1,20 @@
 public with sharing class septaStationScheduleServerController {
-    public class septaStationTimetableEntry {
+    public class septaStationTimetableEntry implements Comparable {
         @AuraEnabled public String trainNumber;
         @AuraEnabled public String destinationApiName;
         @AuraEnabled public String destinationDisplayName;
         @AuraEnabled public String departureTime;
+        public DateTime departureDatetime;
+
+        public Integer compareTo(Object other) {
+            if (other instanceof septaStationTimetableEntry) {
+                septaStationTimetableEntry o = (septaStationTimetableEntry)other;
+                
+                return departureDatetime < o.departureDatetime ? -1 : 1;
+            }
+
+            return 0;
+        }
     }
     
     public class septaStationTimetableResponse {
@@ -89,10 +100,12 @@ public with sharing class septaStationScheduleServerController {
                                                         ? mapping.get(s.destinationApiName) : s.destinationApiName);
                                                     
                                                     // Separately coerce the date time value to a string 
-                                                    // so Apex can bind to the right DateTime.valueOf
+                                                    // so Apex can bind to the right DateTime.valueOf method
+                                                    // We'll store the DateTime object for sorting. 
+                                                    // (since the API returns Northbound first and then Southbound)
                                                     String dateTimeString = (String)departure.get('depart_time');
-                                                    s.departureTime = DateTime.valueOf(dateTimeString).format('h:mm a');
-                                                    
+                                                    s.departureDatetime = DateTime.valueOf(dateTimeString);
+                                                    s.departureTime = s.departureDatetime.format('h:mm a');
                                                     r.timetable.add(s);
                                                 }
                                             }
@@ -101,6 +114,8 @@ public with sharing class septaStationScheduleServerController {
                                 }
                             }
                         }
+
+                        r.timetable.sort();
                     } catch (Exception e) {
                         r.error = 'Unable to parse response from SEPTA API.';
                         r.timetable = null;
