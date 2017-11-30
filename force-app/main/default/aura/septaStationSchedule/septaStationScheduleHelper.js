@@ -14,9 +14,11 @@
                     alert(j.error);
                 } else {
                     component.set('v.timetable', j.timetable);
-                }            
+                }
+                component.set('v.loading', false);
             });
             
+            component.set('v.loading', true);
             $A.enqueueAction(action);
         }
 	}

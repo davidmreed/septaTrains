@@ -1,6 +1,8 @@
 ({
 	doInit : function(component, event, helper) {
         component.set('v.popupStore', {});
+        helper.loadStationData(component, event, helper);
+        helper.loadPositionData(component, event, helper);
 	},
     
     onScriptsLoaded : function(component, event, helper) {
@@ -9,19 +11,7 @@
     		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
         }).addTo(m);
         component.set('v.map', m);
-
-        var call = component.get('c.loadData');
-        call.setCallback(this, function(result) {
-            if (result.getState() === 'SUCCESS') {
-                component.set('v.stationData', result.getReturnValue());
-
-                helper.populateMap(component, helper, m);                
-            } else {
-                // FIXME: handle error.
-            }
-        });
-
-        $A.enqueueAction(call);
+        helper.checkLoadingProgress(component, event, helper);
     },
     
     doSelectEntity : function(component, event, helper) {

@@ -8,8 +8,10 @@
             action.setParam('train', selection);
             action.setCallback(this, function(result) {
                 component.set('v.timetable', result.getReturnValue().timetable);
+                component.set('v.loading', false);
             });
             
+            component.set('v.loading', true);
             $A.enqueueAction(action);
         }
     }

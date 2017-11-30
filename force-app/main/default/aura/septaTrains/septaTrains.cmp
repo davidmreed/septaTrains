@@ -2,6 +2,8 @@
     <aura:attribute name="map" type="Object" access="PRIVATE" />
     <aura:attribute name="popupStore" type="Object" access="PRIVATE" />
     <aura:attribute name="stationData" type="Object[]" access="PRIVATE" />
+    <aura:attribute name="positions" type="Object[]" access="PRIVATE" />
+    <aura:attribute name="loading" type="Boolean" access="PRIVATE" default="true" />
     
     <aura:registerEvent name="mapSelection" type="c:navigateEvent" />
                
@@ -14,6 +16,10 @@
     <aura:method name="selectEntity" action="{! c.doSelectEntity }">
         <aura:attribute name="entity" type="String" />
     </aura:method>
-
+	
+    <aura:if isTrue="{! v.loading }">
+        <lightning:spinner size="large" />
+    </aura:if>
+    
     <div aura:id="map" class="slds-size_12-of-12 grow slds-grid_vertical-stretch"></div>
 </aura:component>
