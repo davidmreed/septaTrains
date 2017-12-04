@@ -63,16 +63,18 @@ public class septaTrainsServerController {
                     for (JSONseptaTrainPosition s : incoming) {
                         septaTrainPosition tp = new septaTrainPosition();
                         
+                        // We escape all the data coming back to protect our page, since this is populated
+                        // directly into HTML in the Leaflet map.
                         tp.lat = s.lat;
                         tp.lng = s.lon;
-                        tp.trainNumber = s.trainno;
-                        tp.service = s.service;
-                        tp.destinationApiName = s.dest;
-                        tp.nextStopApiName = s.nextstop;
-                        tp.line = s.line;
-                        tp.cars = s.consist.split(',');
+                        tp.trainNumber = s.trainno.escapeHtml4();
+                        tp.service = s.service.escapeHtml4();
+                        tp.destinationApiName = s.dest.escapeHtml4();
+                        tp.nextStopApiName = s.nextstop.escapeHtml4();
+                        tp.line = s.line.escapeHtml4();
+                        tp.cars = s.consist.escapeHtml4().split(',');
                         tp.minutesLate = s.late;
-                        tp.sourceApiName = s.SOURCE;
+                        tp.sourceApiName = s.SOURCE.escapeHtml4();
 
                         tp.destinationDisplayName = (mapping.containsKey(s.dest) ? mapping.get(s.dest) : s.dest);
                         tp.nextStopDisplayName = (mapping.containsKey(s.nextstop) ? mapping.get(s.nextstop) : s.nextstop);
