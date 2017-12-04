@@ -6,7 +6,7 @@
 	},
     
     onScriptsLoaded : function(component, event, helper) {
-        var m = L.map(component.find('map').getElement()).setView([39.9537069, -75.1649369], 11);
+        var m = L.map(component.find('map').getElement(), {zoomControl: true,zoom:1,zoomAnimation:false,fadeAnimation:true,markerZoomAnimation:true}).setView([39.9537069, -75.1649369], 11);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
     		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
         }).addTo(m);
