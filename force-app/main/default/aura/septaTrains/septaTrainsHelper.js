@@ -53,9 +53,7 @@
                  .on('click', function(e) {
                      var evt = component.getEvent('mapSelection');
                     
-                     evt.setParam('entity', { entity: data.name, type: 'STATION', data: data });
-                     evt.setParam('type', 'STATION');
-                    
+                     evt.setParam('entity', { entity: data.name, type: 'STATION', data: data });                    
                      evt.fire();
                  });
         
