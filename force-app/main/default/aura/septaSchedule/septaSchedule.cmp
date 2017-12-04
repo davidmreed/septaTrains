@@ -5,27 +5,27 @@
     <aura:attribute name="columns" type="List" access="PUBLIC" />
     <aura:attribute name="loading" type="Boolean" access="PUBLIC" default="false" />
     
-    <lightning:card >
-        <aura:set attribute="title">
-            <div class="slds-page-header__title">Schedule for {! v.displayName }</div>
-        </aura:set>
-        <aura:if isTrue="{! not(v.loading) }">
-            <aura:if isTrue="{! not(empty(v.timetable)) }">
-                <div class="slds-scrollable_y" style="height: 90vh;">
-                    <lightning:datatable data="{! v.timetable }"
-                                        columns="{! v.columns }"
-                                        aura:id="table"
-                                        hideCheckboxColumn="true"
-                                        resizeColumnDisabled="true">
-                    </lightning:datatable>
-                </div>
+    <div class="slds-scrollable_y" style="height: 100vh;">
+        <lightning:card >
+            <aura:set attribute="title">
+                <div class="slds-page-header__title">Schedule for {! v.displayName }</div>
+            </aura:set>
+            <aura:if isTrue="{! not(v.loading) }">
+                <aura:if isTrue="{! not(empty(v.timetable)) }">
+                        <lightning:datatable data="{! v.timetable }"
+                                            columns="{! v.columns }"
+                                            aura:id="table"
+                                            hideCheckboxColumn="true"
+                                            resizeColumnDisabled="true">
+                        </lightning:datatable>
+                    <aura:set attribute="else">
+                        <p class="slds-align_absolute-center slds-text-title_caps">No schedule information.</p>
+                    </aura:set>
+                </aura:if>
                 <aura:set attribute="else">
-                    <p class="slds-align_absolute-center slds-text-title_caps">No schedule information.</p>
+                    <lightning:spinner size="small"/>
                 </aura:set>
             </aura:if>
-            <aura:set attribute="else">
-                <lightning:spinner size="small"/>
-            </aura:set>
-        </aura:if>
-    </lightning:card>
+        </lightning:card>
+    </div>
 </aura:component>
