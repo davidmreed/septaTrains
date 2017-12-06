@@ -49,6 +49,7 @@
         var m = L.marker([data.lat, data.lng], 
                          {'title': data.name + ' (' + data.line + ')',
                           'icon': L.divIcon()})
+                 .bindPopup('<strong>'+ data.name + '</strong>' + ' (' + data.line + ')')
                  .addTo(map)
                  .on('click', function(e) {
                      var evt = component.getEvent('mapSelection');

@@ -1,0 +1,12 @@
+<aura:component controller="septaEntitySelectorServerController">
+    <aura:attribute name="statusOptions" type="Object[]" access="PRIVATE" />
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+    <aura:registerEvent name="navigateEvent" type="c:navigateEvent" />
+
+    <lightning:combobox aura:id="entitySelector" 
+                        name="entitySelector" 
+                        label="Find a Schedule"
+                        placeholder="Train Number or Station"
+                        onchange="{! c.handleComboNavigate }"
+                        options="{! v.statusOptions }" />
+</aura:component>	

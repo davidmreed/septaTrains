@@ -15,11 +15,13 @@
     },
     
     doSelectEntity : function(component, event, helper) {
-        var store = component.get('popupStore');
-        var popup = store.get(event.getParam('entity'));
-        
-        if (popup) {
-            popup.openPopup();
+        var store = component.get('v.popupStore');
+        var marker = store[event.getParam('arguments').entity];
+        var map = component.get('v.map');
+
+        if (marker) {
+            map.panTo(marker.getLatLng());
+            marker.openPopup();
         }
     }
 })
