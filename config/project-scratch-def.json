@@ -1,6 +1,7 @@
 {
     "orgName": "David Company",
-    "edition": "Developer",
+    "edition": "Enterprise",
+    "features": ["Sites"],
     "orgPreferences" : {
         "enabled": ["S1DesktopEnabled"]
     }
