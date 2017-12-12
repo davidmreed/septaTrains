@@ -45,8 +45,8 @@ public class septaStationScheduleServerControllerTEST {
             System.assert(String.isNotBlank(e.departureTime));
         }
         
-        System.assertEquals('222', r.timetable[0].trainNumber);
-        System.assertEquals('Norristown', r.timetable[0].destinationApiName);
+        System.assertEquals('2327', r.timetable[0].trainNumber);
+        System.assertEquals('Elwyn', r.timetable[0].destinationApiName);
     }
     
     @isTest
