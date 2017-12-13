@@ -1,3 +1,7 @@
+# septaTrains
+
+[![CircleCI](https://circleci.com/gh/davidmreed/septaTrains.svg?style=svg)](https://circleci.com/gh/davidmreed/septaTrains)
+
 
 
 ## SEPTA APIs
