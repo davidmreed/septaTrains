@@ -9,8 +9,12 @@
         	<c:septaTrains aura:id="mapView" />
         </lightning:layoutItem>
         <lightning:layoutItem size="4">
-            <c:septaEntitySelector />
-            <c:septaScheduleSidebar selectedEntity="{! v.selectedEntity }" />
+            <div class="slds-p-left_small">
+                <div class="slds-p-top_small slds-p-bottom_small">
+                    <c:septaEntitySelector />
+                </div>
+                <c:septaScheduleSidebar selectedEntity="{! v.selectedEntity }" />
+            </div>
         </lightning:layoutItem>
     </lightning:layout>
 

@@ -5,8 +5,8 @@
     <aura:attribute name="columns" type="List" access="PUBLIC" />
     <aura:attribute name="loading" type="Boolean" access="PUBLIC" default="false" />
     
-    <div class="slds-scrollable_y" style="height: 100vh;">
-        <lightning:card >
+    <div class="slds-scrollable_y" style="height: 85vh;">
+        <lightning:card iconName="standard:timesheet">
             <aura:set attribute="title">
                 <div class="slds-page-header__title">Schedule for {! v.displayName }</div>
             </aura:set>
@@ -19,7 +19,7 @@
                                             resizeColumnDisabled="true">
                         </lightning:datatable>
                     <aura:set attribute="else">
-                        <p class="slds-align_absolute-center slds-text-title_caps">No schedule information.</p>
+                        <p class="slds-align_absolute-center slds-text-title_caps slds-p-top_xx-large">No schedule information.</p>
                     </aura:set>
                 </aura:if>
                 <aura:set attribute="else">
