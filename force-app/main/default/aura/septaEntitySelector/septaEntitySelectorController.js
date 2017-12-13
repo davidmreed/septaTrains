@@ -18,6 +18,6 @@
         evt.setParam('entity', { entity: entity, type: (Number.isNaN(Number(entity)) ? 'STATION' : 'TRAIN') });                    
         evt.fire();
 
-        component.set('v.value', null);
+        event.getSource().set('v.value', null);
     }
 })
