@@ -1,5 +1,7 @@
 @isTest
 public class septaTrainsServerControllerTEST {
+    public static final Integer POSITION_COUNT = 36;
+
     private class TrainViewHTTPErrorMockService implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             HTTPResponse r = new HTTPResponse();
@@ -26,7 +28,7 @@ public class septaTrainsServerControllerTEST {
         Test.stopTest();
         
         System.assertEquals(null, r.error);
-        System.assertEquals(36, r.positions.size());
+        System.assertEquals(POSITION_COUNT, r.positions.size());
         for (septaTrainsServerController.septaTrainPosition e : r.positions) {
             System.assert(String.isNotBlank(e.lat));
             System.assert(String.isNotBlank(e.lng));

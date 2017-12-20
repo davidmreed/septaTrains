@@ -1,4 +1,5 @@
 public with sharing class septaEntitySelectorServerController {
+    @TestVisible
     private class septaEntitySelectorItem implements Comparable {
         @AuraEnabled public String label;
         @AuraEnabled public String value;

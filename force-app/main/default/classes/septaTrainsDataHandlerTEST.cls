@@ -1,10 +1,12 @@
 @isTest
 public class septaTrainsDataHandlerTEST {
+    public static final Integer STATION_COUNT = 155;
+
     @isTest 
     public static void testLoadData() {
         List<septaTrainsDataHandler.septaStation> stations = septaTrainsDataHandler.loadData();
 
-        System.assertEquals(155, stations.size());
+        System.assertEquals(STATION_COUNT, stations.size());
     }
 
     @isTest
