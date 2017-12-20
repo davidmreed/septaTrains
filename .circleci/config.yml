@@ -36,7 +36,9 @@ jobs:
           name: Run Apex Tests
           command: |
               mkdir ~/apex_tests
-              node_modules/sfdx-cli/bin/run force:apex:test:run -u scratch -r junit -d ~/apex_tests > /dev/null
+              node_modules/sfdx-cli/bin/run force:apex:test:run -u scratch -c -r junit -d ~/apex_tests > /dev/null
+              mv ~/apex_tests/test-result-codecoverage.json .
+              bash <(curl -s https://codecov.io/bash)
       - run: 
           name: Clean Up
           when: always
