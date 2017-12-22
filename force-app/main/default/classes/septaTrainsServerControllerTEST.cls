@@ -2,17 +2,6 @@
 public class septaTrainsServerControllerTEST {
     public static final Integer POSITION_COUNT = 36;
 
-    private class TrainViewHTTPErrorMockService implements HttpCalloutMock {
-        public HTTPResponse respond(HTTPRequest req) {
-            HTTPResponse r = new HTTPResponse();
-            
-            r.setStatusCode(404);
-            r.setBody('');
-            
-            return r;
-        }
-    }
-        
     @isTest
     public static void testGetTrainPositions() {
         StaticResourceCalloutMock m = new StaticResourceCalloutMock();
@@ -64,12 +53,30 @@ public class septaTrainsServerControllerTEST {
     public static void testGetTrainPositionsHTTPError() {
         septaTrainsServerController.septaTrainPositionResponse r;
         
-        Test.setMock(HTTPCalloutMock.class, new TrainViewHTTPErrorMockService());
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.HTTPErrorMockService());
         Test.startTest();
         r = septaTrainsServerController.getTrainPositions();
         Test.stopTest();
         
         System.assertEquals('The SEPTA TrainView API returned error 404.', r.error);
         System.assertEquals(null, r.positions);
+    }
+
+    @isTest
+    public static void testLoadData() {
+        System.assertEquals(septaTrainsDataHandler.loadData().size(), septaTrainsServerController.loadData().size());
+    }
+
+    @isTest
+    public static void testDevilMockService() {
+        septaTrainsServerController.septaTrainPositionResponse r;
+        
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.DevilMockService());
+        Test.startTest();
+        r = septaTrainsServerController.getTrainPositions();
+        Test.stopTest();
+        
+        System.assertEquals('Failed to parse response from SEPTA TrainView API.', r.error);
+        System.assertEquals(0, r.positions.size()); 
     }
 }

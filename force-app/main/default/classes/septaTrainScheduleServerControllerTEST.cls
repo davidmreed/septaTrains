@@ -1,27 +1,5 @@
 @isTest
-public class septaTrainScheduleServerControllerTEST {
-    private class TrainTimetableHTTPErrorMockService implements HttpCalloutMock {
-        public HTTPResponse respond(HTTPRequest req) {
-            HTTPResponse r = new HTTPResponse();
-            
-            r.setStatusCode(404);
-            r.setBody('');
-            
-            return r;
-        }
-    }
-    
-    private class TrainTimetableErrorMockService implements HttpCalloutMock {
-        public HTTPResponse respond(HTTPRequest req) {
-            HTTPResponse r = new HTTPResponse();
-            
-            r.setStatusCode(200);
-            r.setBody('{ "error": "this is the error message" }');
-            
-            return r;
-        }
-    }
-    
+public class septaTrainScheduleServerControllerTEST {    
     @isTest
     public static void testGetTrainTimetableGood() {
         StaticResourceCalloutMock m = new StaticResourceCalloutMock();
@@ -53,7 +31,7 @@ public class septaTrainScheduleServerControllerTEST {
     public static void testGetTrainTimetableHTTPError() {
         septaTrainScheduleServerController.septaTrainTimetableResponse r;
         
-        Test.setMock(HTTPCalloutMock.class, new TrainTimetableHTTPErrorMockService());
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.HTTPErrorMockService());
         Test.startTest();
         r = septaTrainScheduleServerController.getTrainTimetable('11111');
         Test.stopTest();
@@ -66,11 +44,26 @@ public class septaTrainScheduleServerControllerTEST {
     public static void testGetTrainTimetableAPIError() {
         septaTrainScheduleServerController.septaTrainTimetableResponse r;
         
-        Test.setMock(HTTPCalloutMock.class, new TrainTimetableErrorMockService());
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.JSONErrorMockService());
         Test.startTest();
         r = septaTrainScheduleServerController.getTrainTimetable('11111');
         Test.stopTest();
         
         System.assertEquals('this is the error message', r.error);
         System.assertEquals(0, r.timetable.size());
-    }}
+    }
+
+    @isTest
+    public static void testGetTrainTimetableDevilService() {
+        septaTrainScheduleServerController.septaTrainTimetableResponse r;
+        
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.DevilMockService());
+        Test.startTest();
+        r = septaTrainScheduleServerController.getTrainTimetable('11111');
+        Test.stopTest();
+        
+        System.assertEquals('Unable to parse response from SEPTA API.', r.error);
+        System.assertEquals(0, r.timetable.size());
+    }
+
+}
