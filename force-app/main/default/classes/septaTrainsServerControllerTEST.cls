@@ -79,4 +79,17 @@ public class septaTrainsServerControllerTEST {
         System.assertEquals('Failed to parse response from SEPTA TrainView API.', r.error);
         System.assertEquals(0, r.positions.size()); 
     }
+
+    @isTest
+    public static void testExceptionService() {
+        septaTrainsServerController.septaTrainPositionResponse r;
+        
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.ExceptionMockService());
+        Test.startTest();
+        r = septaTrainsServerController.getTrainPositions();
+        Test.stopTest();
+        
+        System.assertEquals('Unable to contact the SEPTA TrainView API.', r.error);
+        System.assertEquals(null, r.positions);
+    }
 }

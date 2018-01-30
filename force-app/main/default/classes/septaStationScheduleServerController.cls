@@ -66,7 +66,6 @@ public with sharing class septaStationScheduleServerController {
                         // Assume good structure. If we throw an exception, we'll return an appropriate error.
                         // The response is a dictionary with only one key, a display-oriented string encoding the station
                         // and the time of the request.
-                        System.debug(o.get(new List<String>(o.keySet()).get(0)));
                         List<Object> topLevel = (List<Object>)o.get(new List<String>(o.keySet()).get(0));
                         
                         r.timetable = new List<septaStationTimetableEntry>();
