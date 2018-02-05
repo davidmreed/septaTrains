@@ -66,4 +66,16 @@ public class septaTrainScheduleServerControllerTEST {
         System.assertEquals(0, r.timetable.size());
     }
 
+    @isTest
+    public static void testGetTrainTimetableExceptionService() {
+        septaTrainScheduleServerController.septaTrainTimetableResponse r;
+        
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.ExceptionMockService());
+        Test.startTest();
+        r = septaTrainScheduleServerController.getTrainTimetable('11111');
+        Test.stopTest();
+        
+        System.assertEquals('Unable to contact SEPTA API.', r.error);
+        System.assertEquals(null, r.timetable);
+    }
 }

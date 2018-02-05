@@ -67,6 +67,19 @@ public class septaStationScheduleServerControllerTEST {
     }
 
     @isTest
+    public static void testExceptionService() {
+        septaStationScheduleServerController.septaStationTimetableResponse r;
+        
+        Test.setMock(HTTPCalloutMock.class, new septaTrainsMocksTEST.ExceptionMockService());
+        Test.startTest();
+        r = septaStationScheduleServerController.getStationTimetable('North Broad St');
+        Test.stopTest();
+        
+        System.assertEquals('Unable to contact the SEPTA API.', r.error);
+        System.assertEquals(null, r.timetable);
+    }
+
+    @isTest
     public static void testSorting() {
         septaStationScheduleServerController.septaStationTimetableEntry a, b;
 

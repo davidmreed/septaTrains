@@ -33,4 +33,11 @@ public class septaTrainsMocksTEST {
         }
     }
 
+    public class MocksException extends Exception {}
+
+    public class ExceptionMockService implements HttpCalloutMock {
+        public HTTPResponse respond(HTTPRequest req) {
+            throw new MocksException('Exception');
+        }
+    }
 }
