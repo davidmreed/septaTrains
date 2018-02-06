@@ -2,9 +2,6 @@ version: "2"
 plugins:
   apexmetrics:
     enabled: true
-    checks:
-      StdCyclomaticComplexity:
-        enabled: false
 checks:
   argument-count:
     enabled: false
