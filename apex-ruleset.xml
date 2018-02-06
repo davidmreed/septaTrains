@@ -2,12 +2,11 @@
 <ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Default ruleset used by the CodeClimate Engine for Salesforce.com Apex" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
    <description>Default ruleset used by the Code Climate Engine for Salesforce.com Apex</description>
 
-   <!-- COMPLEXITY -->
+   <!-- COMPLEXITY --><!--
    <rule ref="category/apex/complexity.xml/ExcessiveClassLength" message="Avoid really long classes (lines of code)">
       <priority>3</priority>
       <properties>
          <property name="minimum" value="1000" />
-         <!-- relevant for Code Climate output only -->
          <property name="cc_categories" value="Complexity" />
          <property name="cc_remediation_points_multiplier" value="150" />
          <property name="cc_block_highlighting" value="false" />
@@ -17,7 +16,6 @@
       <priority>3</priority>
       <properties>
          <property name="minimum" value="6" />
-         <!-- relevant for Code Climate output only -->
          <property name="cc_categories" value="Complexity" />
          <property name="cc_remediation_points_multiplier" value="50" />
          <property name="cc_block_highlighting" value="false" />
@@ -27,12 +25,11 @@
       <priority>3</priority>
       <properties>
          <property name="minimum" value="25" />
-         <!-- relevant for Code Climate output only -->
          <property name="cc_categories" value="Complexity" />
          <property name="cc_remediation_points_multiplier" value="150" />
          <property name="cc_block_highlighting" value="false" />
       </properties>
-   </rule>
+   </rule>-->
 
    <!-- PERFORMANCE -->
    <rule ref="category/apex/performance.xml/AvoidSoqlInLoops" message="Avoid Soql queries inside loops">
