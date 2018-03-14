@@ -1,11 +1,9 @@
 version: "2"
 plugins:
-  apexmetrics:
-    enabled: true
-    checks:
-      StdCyclomaticComplexity:
-        enabled: false
-
+  engines:
+    pmd:
+      enabled: true
+      config: apex-ruleset.xml
 checks:
   argument-count:
     enabled: false
