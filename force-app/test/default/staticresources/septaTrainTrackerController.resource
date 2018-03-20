@@ -18,15 +18,18 @@ describe('septaTrainTrackerController', function() {
         .then(function(component) {
             spyOn(component.find('mapView'), 'selectEntity');
 
-            var event = component.find('sidebar').find.getEvent("navigateEvent");
-            event.setParams({"entity": "TEST"});
+            var event = component.find('entitySelector').getEvent("navigateEvent");
+            var entity = { "entity": "Suburban Station", "type": "STATION" };
+
+            event.setParams({ "entity": entity });
             event.fire();
 
-            expect(component.get("v.selectedEntity")).toBe("TEST");
-            expect(component.find('mapView').selectEntity).toHaveBeenCalledWith('TEST');
+            expect(component.get("v.selectedEntity")).toBe(entity);
+            expect(component.find('mapView').selectEntity).toHaveBeenCalledWith('Suburban Station');
             done();
         }).catch(function(e) {
             done.fail(e);
         });
     });
+
 });
