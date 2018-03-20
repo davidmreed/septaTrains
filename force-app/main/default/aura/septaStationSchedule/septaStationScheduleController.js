@@ -5,6 +5,7 @@
             { label: 'Dest.', fieldName: 'destinationDisplayName', type: 'string'},
             { label: 'Departs', fieldName: 'departureTime', type: 'string'}
         ]);
+        component.set('v.keyField', 'trainNumber');
         
         if (component.get('v.selectedEntity')) {
             helper.updateSchedule(component, event, helper);
