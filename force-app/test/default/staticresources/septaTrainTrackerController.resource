@@ -24,7 +24,7 @@ describe('septaTrainTrackerController', function() {
             event.setParams({ "entity": entity });
             event.fire();
 
-            expect(component.get("v.selectedEntity")).toBe(entity);
+            expect(component.get("v.selectedEntity")).toEqual(entity);
             expect(component.find('mapView').selectEntity).toHaveBeenCalledWith('Suburban Station');
             done();
         }).catch(function(e) {
