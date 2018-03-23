@@ -36,6 +36,10 @@ job-definition: &jobdef
             when: always
             command: |
                 rm assets/server.key
+        - run:
+            name: Install Lightning Testing Service
+            command: |
+                node_modules/sfdx-cli/bin/run force:lightning:test:install -t jasmine
         - run: 
             name: Push Source
             command: |
@@ -43,8 +47,14 @@ job-definition: &jobdef
         - run:
             name: Run Apex Tests
             command: |
-                mkdir ~/apex_tests
-                node_modules/sfdx-cli/bin/run force:apex:test:run -u scratch -c -r human -d ~/apex_tests
+                mkdir ~/tests
+                mkdir ~/tests/apex
+                node_modules/sfdx-cli/bin/run force:apex:test:run -u scratch -c -r human -d ~/tests/apex -w 9999
+        - run:
+            name: Run Lightning Tests
+            command: | 
+                mkdir ~/tests/lightning
+                node_modules/sfdx-cli/bin/run force:lightning:test:run -d ~/tests/lightning -r human 
         - run: 
             name: Push to Codecov.io
             command: |
@@ -55,11 +65,11 @@ job-definition: &jobdef
             when: always
             command: |
                 node_modules/sfdx-cli/bin/run force:org:delete -u scratch -p
-                rm ~/apex_tests/*.txt ~/apex_tests/test-result-7*.json
+                rm ~/tests/apex/*.txt ~/tests/apex/test-result-7*.json
         - store_artifacts:
-            path: ~/apex_tests
+            path: ~/tests
         - store_test_results:
-            path: ~/apex_tests
+            path: ~/tests
 
 version: 2
 jobs:
