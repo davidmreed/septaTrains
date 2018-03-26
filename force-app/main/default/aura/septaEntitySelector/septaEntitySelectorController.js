@@ -12,6 +12,8 @@
     },
 
     handleComboNavigate : function(component, event, helper) {
+        console.log('component = ' + component + ' event = ' + event + ' helper = ' + helper);
+        console.log('event params = ' + event.getParams().arguments);
         var evt = component.getEvent('navigateEvent');
         var entity = event.getParam('value');
         
