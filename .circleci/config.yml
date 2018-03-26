@@ -51,9 +51,6 @@ job-definition: &jobdef
             name: Run Lightning Tests
             command: | 
                 mkdir ~/tests/lightning
-                export DISPLAY=:99.0
-                sh -e /etc/init.d/xvfb start
-                sleep 3 # give xvfb some time to start
                 node_modules/sfdx-cli/bin/run force:lightning:test:run -d ~/tests/lightning -r human 
         - run: 
             name: Push to Codecov.io
