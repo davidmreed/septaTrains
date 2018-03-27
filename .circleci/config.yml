@@ -1,6 +1,6 @@
 job-definition: &jobdef
     docker:
-        - image: circleci/openjdk:latest-node
+        - image: circleci/openjdk:latest-node-browsers
     steps:
         - checkout
         - restore_cache:
