@@ -1,5 +1,6 @@
 describe('septaScheduleSidebarController', function() {
     it("sets selected entity upon event receipt", function(done) {
+        spyOn($A, 'enqueueAction').and.stub();
         $T.createComponent("c:septaScheduleSidebar", {}, true)
         .then(function(component) {
             component.set('v.selectedEntity', { type: 'TRAIN', entity: '100'});
