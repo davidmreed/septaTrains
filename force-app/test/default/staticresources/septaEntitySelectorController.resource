@@ -1,4 +1,4 @@
-describe('septaTrainTrackerController', function() {
+describe('septaEntitySelectorController', function() {
     afterEach(function() {
         $T.clearRenderedTestComponents();
     });
@@ -22,16 +22,10 @@ describe('septaTrainTrackerController', function() {
             var selectList = component.find('entitySelector');
         
             selectList.set('v.value', '100');
-            console.log(selectList.get('v.onchange'));
-            console.log(JSON.stringify(selectList.get('v.onchange')));
-            
-            var q = selectList.get('v.onchange');
-            
-
-/*            expect(getEvent).toHaveBeenCalled();
+            expect(getEvent).toHaveBeenCalled();
             expect(eventSpy.fire).toHaveBeenCalled();
-            expect(eventSpy.setParam).toHaveBeenCalledWith({ entity: '100', type: 'TRAIN'});
-*/
+            expect(eventSpy.setParam).toHaveBeenCalledWith('entity', { entity: '100', type: 'TRAIN'});
+
             done();
         });
     });
