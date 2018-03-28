@@ -1,4 +1,8 @@
 describe('septaStationScheduleController', function() {
+    afterEach(function() {
+        $T.clearRenderedTestComponents();
+    });
+
     it("sets schedule and display name upon selection", function(done) {
         var res = { 
                       getState : function() { return 'SUCCESS'; }, 

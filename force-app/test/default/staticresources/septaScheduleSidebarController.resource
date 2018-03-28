@@ -1,4 +1,8 @@
 describe('septaScheduleSidebarController', function() {
+    afterEach(function() {
+        $T.clearRenderedTestComponents();
+    });
+
     it("sets selected entity upon event receipt", function(done) {
         spyOn($A, 'enqueueAction').and.stub();
         $T.createComponent("c:septaScheduleSidebar", {}, true)

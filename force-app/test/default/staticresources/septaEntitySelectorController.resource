@@ -1,4 +1,8 @@
 describe('septaTrainTrackerController', function() {
+    afterEach(function() {
+        $T.clearRenderedTestComponents();
+    });
+
     it('fires event upon navigate', function(done) {
         // Fire the combobox's update event.
         var res = { getState : function() { return 'SUCCESS'; }, 

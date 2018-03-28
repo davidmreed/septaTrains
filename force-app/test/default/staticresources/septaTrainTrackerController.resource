@@ -1,4 +1,8 @@
 describe('septaTrainTrackerController', function() {
+    afterEach(function() {
+        $T.clearRenderedTestComponents();
+    });
+
     it("sets selected entity upon event receipt", function(done) {
         $T.createComponent("c:septaTrainTracker", {}, true)
         .then(function(component) {
