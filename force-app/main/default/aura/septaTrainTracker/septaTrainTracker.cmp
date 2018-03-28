@@ -10,7 +10,7 @@
         </lightning:layoutItem>
         <lightning:layoutItem size="4">
             <div class="slds-p-left_small">
-                <div class="slds-p-top_small slds-p-bottom_small">
+                <div class="slds-p-top_small slds-p-bottom_small slds-p-right_small">
                     <c:septaEntitySelector aura:id="entitySelector" />
                 </div>
                 <c:septaScheduleSidebar aura:id="sidebar" selectedEntity="{! v.selectedEntity }" />

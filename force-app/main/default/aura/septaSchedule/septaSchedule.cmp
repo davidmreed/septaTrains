@@ -6,7 +6,7 @@
     <aura:attribute name="keyField" type="String" access="PUBLIC" />
     <aura:attribute name="loading" type="Boolean" access="PUBLIC" default="false" />
     
-    <div class="slds-scrollable_y" style="height: 85vh;">
+    <div class="slds-scrollable_y" style="height: -webkit-fill-available; height:-moz-available; height:90vh;">
         <lightning:card iconName="standard:timesheet">
             <aura:set attribute="title">
                 <div class="slds-page-header__title">Schedule for {! v.displayName }</div>
