@@ -1,18 +1,15 @@
 job-definition: &jobdef
     docker:
-        - image: circleci/node:latest
+        - image: circleci/openjdk:latest-node-browsers
     steps:
         - checkout
         - restore_cache:
             keys:
                 - sfdx-6.8.2-local
         - run:
-            name: Decrypt Server Key
-            command: |
-                openssl aes-256-cbc -k $KEY -in assets/server.key.enc -out assets/server.key -d
-        - run:
             name: Install Salesforce DX
             command: |
+                openssl aes-256-cbc -k $KEY -in assets/server.key.enc -out assets/server.key -d -md md5
                 if [ ! -d node_modules/sfdx-cli ]; then
                     export SFDX_AUTOUPDATE_DISABLE=true
                     export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
@@ -36,6 +33,10 @@ job-definition: &jobdef
             when: always
             command: |
                 rm assets/server.key
+        - run:
+            name: Install Lightning Testing Service
+            command: |
+                node_modules/sfdx-cli/bin/run force:lightning:test:install -t jasmine
         - run: 
             name: Push Source
             command: |
@@ -43,23 +44,29 @@ job-definition: &jobdef
         - run:
             name: Run Apex Tests
             command: |
-                mkdir ~/apex_tests
-                node_modules/sfdx-cli/bin/run force:apex:test:run -u scratch -c -r human -d ~/apex_tests -w 9999
+                mkdir ~/tests
+                mkdir ~/tests/apex
+                node_modules/sfdx-cli/bin/run force:apex:test:run -u scratch -c -r human -d ~/tests/apex -w 9999
+        - run:
+            name: Run Lightning Tests
+            command: | 
+                mkdir ~/tests/lightning
+                node_modules/sfdx-cli/bin/run force:lightning:test:run -d ~/tests/lightning -r human -a septaTrainsTests.app -o
         - run: 
             name: Push to Codecov.io
             command: |
-                cp ~/apex_tests/test-result-codecoverage.json .
+                cp ~/tests/apex/test-result-codecoverage.json .
                 bash <(curl -s https://codecov.io/bash)
         - run: 
             name: Clean Up
             when: always
             command: |
                 node_modules/sfdx-cli/bin/run force:org:delete -u scratch -p
-                rm ~/apex_tests/*.txt ~/apex_tests/test-result-7*.json
+                rm ~/tests/apex/*.txt ~/tests/apex/test-result-7*.json
         - store_artifacts:
-            path: ~/apex_tests
+            path: ~/tests
         - store_test_results:
-            path: ~/apex_tests
+            path: ~/tests
 
 version: 2
 jobs:

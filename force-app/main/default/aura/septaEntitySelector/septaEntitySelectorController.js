@@ -13,7 +13,7 @@
 
     handleComboNavigate : function(component, event, helper) {
         var evt = component.getEvent('navigateEvent');
-        var entity = event.getParam('value');
+        var entity = component.get('v.selectedEntity');
         
         evt.setParam('entity', { entity: entity, type: (Number.isNaN(Number(entity)) ? 'STATION' : 'TRAIN') });                    
         evt.fire();

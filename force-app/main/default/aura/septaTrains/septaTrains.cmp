@@ -18,7 +18,7 @@
     </aura:method>
 	
     <aura:if isTrue="{! v.loading }">
-        <lightning:spinner size="large" />
+        <lightning:spinner size="large" alternativeText="Loading..." />
     </aura:if>
     
     <div aura:id="map" class="slds-size_12-of-12 grow slds-grid_vertical-stretch"></div>

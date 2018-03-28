@@ -3,9 +3,10 @@
     <aura:attribute name="displayName" type="String" access="PUBLIC" />
     <aura:attribute name="timetable" type="Object[]" access="PUBLIC" />
     <aura:attribute name="columns" type="List" access="PUBLIC" />
+    <aura:attribute name="keyField" type="String" access="PUBLIC" />
     <aura:attribute name="loading" type="Boolean" access="PUBLIC" default="false" />
     
-    <div class="slds-scrollable_y" style="height: 85vh;">
+    <div class="slds-scrollable_y" style="height: -webkit-fill-available; height:-moz-available; height:90vh;">
         <lightning:card iconName="standard:timesheet">
             <aura:set attribute="title">
                 <div class="slds-page-header__title">Schedule for {! v.displayName }</div>
@@ -14,6 +15,7 @@
                 <aura:if isTrue="{! not(empty(v.timetable)) }">
                         <lightning:datatable data="{! v.timetable }"
                                             columns="{! v.columns }"
+                                            keyField="{! v.keyField }"
                                             aura:id="table"
                                             hideCheckboxColumn="true"
                                             resizeColumnDisabled="true">
@@ -23,7 +25,7 @@
                     </aura:set>
                 </aura:if>
                 <aura:set attribute="else">
-                    <lightning:spinner size="small"/>
+                    <lightning:spinner size="small" alternativeText="Loading schedule..." />
                 </aura:set>
             </aura:if>
         </lightning:card>
