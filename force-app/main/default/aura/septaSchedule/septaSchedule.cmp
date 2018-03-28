@@ -25,7 +25,7 @@
                     </aura:set>
                 </aura:if>
                 <aura:set attribute="else">
-                    <lightning:spinner size="small"/>
+                    <lightning:spinner size="small" alternativeText="Loading schedule..." />
                 </aura:set>
             </aura:if>
         </lightning:card>
