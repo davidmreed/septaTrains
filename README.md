@@ -3,9 +3,9 @@
 [![CircleCI](https://circleci.com/gh/davidmreed/septaTrains.svg?style=svg)](https://circleci.com/gh/davidmreed/septaTrains)
 [![codecov](https://codecov.io/gh/davidmreed/septaTrains/branch/master/graph/badge.svg)](https://codecov.io/gh/davidmreed/septaTrains)
 
-This application is a transit tracker focused on [SEPTA](http://www.septa.org) regional rail trains. It's built with Salesforce Lightning and Salesforce DX, and is intended as a demonstration and learning project for Lightning and for SFDX development lifecycle and toolchain work. 
+This application is a transit tracker focused on [SEPTA](http://www.septa.org) regional rail trains. It's built with Salesforce Lightning and Salesforce DX, and is intended as a demonstration and learning project for Lightning and for SFDX development lifecycle and toolchain work. It uses [Leaflet](http://leafletjs.com/) for mapping with OpenStreetMap data.
 
-For discussion of the toolchain being used here, including SFDX, Visual Studio Code, CircleCI, Codecov.io, Code Climate/ApexMetrics and PMD, see [ktema.org](http://ktema.org).
+For discussion of the toolchain being applied here, including SFDX, Visual Studio Code, CircleCI, Codecov.io, and PMD, see [ktema.org](http://ktema.org).
 
 ## SEPTA APIs
 
