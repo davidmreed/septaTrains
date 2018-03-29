@@ -12,12 +12,16 @@
     },
 
     handleComboNavigate : function(component, event, helper) {
-        var evt = component.getEvent('navigateEvent');
-        var entity = component.get('v.selectedEntity');
-        
-        evt.setParam('entity', { entity: entity, type: (Number.isNaN(Number(entity)) ? 'STATION' : 'TRAIN') });                    
-        evt.fire();
+        // Don't do anything if we change *to* null (otherwise we get recursion)
+        if (event.getParam('value') != null) {
+            var evt = component.getEvent('navigateEvent');
+            var entity = component.get('v.selectedEntity');
+            
+            evt.setParam('entity', { entity: entity, type: (Number.isNaN(Number(entity)) ? 'STATION' : 'TRAIN') });                    
+            evt.fire();
 
-        event.getSource().set('v.value', null);
+            // Reset ourselves and thereby the combo box.
+            component.set('v.selectedEntity', null);
+        }
     }
 })

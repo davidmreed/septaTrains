@@ -25,7 +25,8 @@ describe('septaEntitySelectorController', function() {
             expect(getEvent).toHaveBeenCalled();
             expect(eventSpy.fire).toHaveBeenCalled();
             expect(eventSpy.setParam).toHaveBeenCalledWith('entity', { entity: '100', type: 'TRAIN'});
-
+            expect(selectList.get('v.value')).toBe(null);
+            
             done();
         });
     });
