@@ -4,6 +4,7 @@
     <aura:attribute name="stationData" type="Object[]" access="PRIVATE" />
     <aura:attribute name="positions" type="Object[]" access="PRIVATE" />
     <aura:attribute name="loading" type="Boolean" access="PRIVATE" default="true" />
+    <aura:attribute name="refreshTimer" type="Object" access="PRIVATE" />
     
     <aura:registerEvent name="mapSelection" type="c:navigateEvent" />
                
@@ -16,6 +17,7 @@
     <aura:method name="selectEntity" action="{! c.doSelectEntity }">
         <aura:attribute name="entity" type="String" />
     </aura:method>
+    <aura:method name="reload" action="{! c.reload }" />
 	
     <aura:if isTrue="{! v.loading }">
         <lightning:spinner size="large" alternativeText="Loading..." />

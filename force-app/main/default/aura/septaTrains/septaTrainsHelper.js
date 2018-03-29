@@ -39,10 +39,16 @@
         $A.enqueueAction(call);
     },
     
-    clearMap : function(map) {
-        map.eachLayer(function(layer) {
-            map.removeLayer(layer);
-        });
+    clearTrainPositions : function(component) {
+        var map = component.get('v.map');
+        var store = component.get('v.popupStore');
+
+        for (const name in store) {
+            if (!Number.isNaN(Number(name))) {
+                store[name].remove();
+                delete store[name];
+            }
+        }
 	},
     
     createStationMapMarker: function(component, data, map) {

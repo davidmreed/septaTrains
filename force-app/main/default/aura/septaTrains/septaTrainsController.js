@@ -3,6 +3,14 @@
         component.set('v.popupStore', {});
         helper.loadStationData(component, event, helper);
         helper.loadPositionData(component, event, helper);
+
+        var interval = window.setInterval(
+            $A.getCallback(function() {
+                component.reload();
+            }), 60000
+        );
+
+        component.set('v.refreshTimer', interval);
 	},
     
     onScriptsLoaded : function(component, event, helper) {
@@ -22,6 +30,14 @@
         if (marker) {
             map.panTo(marker.getLatLng());
             marker.openPopup();
+        }
+    },
+
+    reload : function(component, event, helper) {
+        if (!component.get('v.loading')) {
+            component.set('v.loading', true);
+            helper.clearTrainPositions(component);
+            helper.loadPositionData(component, event, helper);
         }
     }
 })
