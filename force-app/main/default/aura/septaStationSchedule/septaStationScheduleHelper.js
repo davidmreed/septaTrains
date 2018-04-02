@@ -21,5 +21,5 @@
             component.set('v.loading', true);
             $A.enqueueAction(action);
         }
-	}
+    }
 })

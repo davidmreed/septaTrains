@@ -1,4 +1,7 @@
 <aura:component extends="c:septaSchedule" controller="septaStationScheduleServerController" implements="flexipage:availableForAllPageTypes">    
     <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
-    <aura:handler name="change" value="{! v.selectedEntity }" action="{! c.handleSelection }" />    
+    <aura:handler name="change" value="{! v.selectedEntity }" action="{! c.handleSelection }" />
+    <aura:handler name="rowHandlerEvent" action="{! c.handleRowEvent }" />
+    
+    <aura:registerEvent name="navigateEvent" type="c:navigateEvent" />
 </aura:component>

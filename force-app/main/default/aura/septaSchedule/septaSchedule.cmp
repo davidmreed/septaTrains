@@ -5,6 +5,8 @@
     <aura:attribute name="columns" type="List" access="PUBLIC" />
     <aura:attribute name="keyField" type="String" access="PUBLIC" />
     <aura:attribute name="loading" type="Boolean" access="PUBLIC" default="false" />
+
+    <aura:registerEvent name="rowHandlerEvent" type="c:rowHandlerEvent" />
     
     <div class="slds-scrollable_y" style="height: -webkit-fill-available; height:-moz-available; height:90vh;">
         <lightning:card iconName="standard:timesheet">
@@ -17,6 +19,7 @@
                             <lightning:datatable data="{! v.timetable }"
                                                 columns="{! v.columns }"
                                                 keyField="{! v.keyField }"
+                                                onrowaction="{! c.handleNavigateClick }"
                                                 aura:id="table"
                                                 hideCheckboxColumn="true"
                                                 resizeColumnDisabled="true">

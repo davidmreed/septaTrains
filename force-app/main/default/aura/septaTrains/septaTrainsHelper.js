@@ -44,10 +44,8 @@
         var store = component.get('v.popupStore');
 
         for (const name in store) {
-            if (!Number.isNaN(Number(name))) {
-                store[name].remove();
-                delete store[name];
-            }
+            store[name].remove();
+            delete store[name];
         }
 	},
     

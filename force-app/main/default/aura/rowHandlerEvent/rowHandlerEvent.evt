@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="A row action was invoked in a Schedule component.">
+    <aura:attribute name="row" type="Object" access="PUBLIC" />
+    <aura:attribute name="action" type="String" access="PUBLIC" />
+</aura:event>
