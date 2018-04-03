@@ -66,22 +66,71 @@
     },
     
     createTrainMapMarker: function(component, data, map) {
-        var title, m, body;
+        var elem, m, body;
 
-        title = 'Train #' + data.trainNumber + ' (' + data.line + ')';
-        body = '<p>' +
-               '<strong>Train #' + data.trainNumber + '</strong>' +
-               '<br /><span style="text-transform: capitalize;">' + data.service.toLowerCase() + '</span> ' +
-               data.cars.length + '-car train' +
-               ' from <strong>' + data.sourceDisplayName + 
-               '</strong> to <strong>' + data.destinationDisplayName + '</strong>, ' +
-               'running on the <strong>' + data.line + '</strong> line' +
-               '<br />' + 'Next stop <strong>' + data.nextStopDisplayName + '</strong>' +
-               '<br />' + (data.minutesLate != 0 ? ('<span style="color: red;">' + 
-               data.minutesLate + ' minute' + (data.minutesLate == 1 ? '' : 's') + ' late</span>') : 'On time') +
-               '</p>';
+        elem = 'Train #' + data.trainNumber + ' (' + data.line + ')';
+        body = document.createElement('p');
+        elem = document.createElement('strong');
+        elem.appendChild(document.createTextNode('Train #' + data.trainNumber));
+        body.appendChild(elem);
+        body.appendChild(document.createElement('br'));
+        elem = document.createElement('span');
+        elem.appendChild(document.createTextNode(data.service.toLowerCase()));
+        elem.setAttribute('style', 'text-transform: capitalize;');
+        body.appendChild(elem);
+        body.appendChild(document.createTextNode(' ' +data.cars.length + '-car train from '));
+        elem = document.createElement('strong');
+        elem.appendChild(document.createTextNode(data.sourceDisplayName));
+        elem.addEventListener('click', function() {
+            component.selectEntity(data.sourceDisplayName);
+
+            var evt = component.getEvent('mapSelection');
+            
+            evt.setParam('entity', { entity: data.sourceDisplayName, type: 'STATION', data: data });
+            evt.fire();
+        })
+        body.appendChild(elem);
+        body.appendChild(document.createTextNode(' to '));
+        elem = document.createElement('strong');
+        elem.appendChild(document.createTextNode(data.destinationDisplayName));
+        elem.addEventListener('click', function() {
+            component.selectEntity(data.destinationDisplayName);
+
+            var evt = component.getEvent('mapSelection');
+            
+            evt.setParam('entity', { entity: data.destinationDisplayName, type: 'STATION', data: data });
+            evt.fire();
+        })
+        body.appendChild(elem);
+        body.appendChild(document.createTextNode(', running on the '));
+        elem = document.createElement('strong');
+        elem.appendChild(document.createTextNode(data.line));
+        body.appendChild(elem);
+        body.appendChild(document.createTextNode(' line.'));
+        body.appendChild(document.createElement('br'));
+        body.appendChild(document.createTextNode('Next stop '));
+        elem = document.createElement('strong');
+        elem.appendChild(document.createTextNode(data.nextStopDisplayName));
+        elem.addEventListener('click', function() {
+            component.selectEntity(data.nextStopDisplayName);
+
+            var evt = component.getEvent('mapSelection');
+            
+            evt.setParam('entity', { entity: data.nextStopDisplayName, type: 'STATION', data: data });
+            evt.fire();
+        })
+        body.appendChild(elem);
+        body.appendChild(document.createElement('br'));
+        if (data.minutesLate != 0) {
+            elem = document.createElement('span');
+            elem.appendChild(document.createTextNode(data.minutesLate + ' minute' + (data.minutesLate == 1 ? '' : 's') + ' late'));
+            elem.setAttribute('style', 'color: red;');            
+            body.appendChild(elem);
+        } else {
+            body.appendChild(document.createTextNode('On time'));
+        }
         
-        m = L.marker([data.lat, data.lng], {'title': title })
+        m = L.marker([data.lat, data.lng], {'title': 'Train #' + data.trainNumber })
              .bindPopup(body)
              .addTo(map)
              .on('popupopen', function(e) {
