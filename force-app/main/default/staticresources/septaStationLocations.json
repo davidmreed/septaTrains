@@ -25,7 +25,8 @@
         "name": "30th Street Station",
         "line": "All Regional Rail Lines",
         "lat": "39.9566667",
-        "lng": "-75.1816667"
+        "lng": "-75.1816667",
+        "short_name": "30th St"
     },
     {
         "id": "90005",
@@ -465,7 +466,8 @@
         "line": "Airport Line",
         "lat": "39.8794444",
         "lng": "-75.2397222",
-        "api_name": "Airport Terminal E-F"
+        "api_name": "Airport Terminal E-F",
+        "short_name": "Airport"
     },
     {
         "id": "90402",
@@ -656,7 +658,8 @@
         "name": "Wayne",
         "line": "Paoli Thorndale Line",
         "lat": "40.0458333",
-        "lng": "-75.3866667"
+        "lng": "-75.3866667",
+        "short_name": "Wayne-A"
     },
     {
         "id": "90512",
@@ -818,7 +821,8 @@
         "name": "Link Belt",
         "line": "Lansdale Doylestown Line",
         "lat": "40.2738889",
-        "lng": "-75.2466667"
+        "lng": "-75.2466667",
+        "short_name": "Colmar-Link Belt"
     },
     {
         "id": "90535",
@@ -997,14 +1001,16 @@
         "name": "Chestnut Hill East",
         "line": "Chestnut Hill East Line",
         "lat": "40.0811111",
-        "lng": "-75.2072222"
+        "lng": "-75.2072222",
+        "short_name": "Chestnut H East"
     },
     {
         "id": "90801",
         "name": "Chestnut Hill West",
         "line": "Chestnut Hill West Line",
         "lat": "40.0763889",
-        "lng": "-75.2083333"
+        "lng": "-75.2083333",
+        "short_name": "Chestnut H West"
     },
     {
         "id": "90802",

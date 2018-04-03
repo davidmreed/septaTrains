@@ -6,6 +6,7 @@ public with sharing class septaTrainsDataHandler {
         @AuraEnabled public String line;
         @AuraEnabled public String lat;
         @AuraEnabled public String lng;
+        @AuraEnabled public string short_name;
     } 
 
     public static List<septaStation> loadData() {
@@ -22,6 +23,9 @@ public with sharing class septaTrainsDataHandler {
         for (septaStation s : stations) {
             if (String.isNotBlank(s.api_name) && String.isNotBlank(s.name)) {
                 mapping.put(s.api_name, s.name);
+            }
+            if (String.isNotBlank(s.short_name) && String.isNotBlank(s.name)) {
+                mapping.put(s.short_name, s.name);
             }
         }
 
