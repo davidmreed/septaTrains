@@ -266,7 +266,8 @@
         "line": "Manayunk Norristown Line",
         "lat": "40.1202778",
         "lng": "-75.3475",
-        "api_name": "Elm St"
+        "api_name": "Elm St",
+        "short_name": "Norristown"        
     },
     {
         "id": "90301",
