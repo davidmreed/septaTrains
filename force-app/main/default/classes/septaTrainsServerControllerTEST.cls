@@ -46,7 +46,7 @@ public class septaTrainsServerControllerTEST {
         System.assertEquals(4, r.positions[0].cars.size());
         System.assertEquals(0, r.positions[0].minutesLate);
         System.assertEquals('Norristown', r.positions[0].sourceApiName);
-        System.assertEquals('Norristown', r.positions[0].sourceDisplayName);
+        System.assertEquals('Elm Street, Norristown', r.positions[0].sourceDisplayName);
     }
     
     @isTest
